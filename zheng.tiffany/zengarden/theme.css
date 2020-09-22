@@ -113,32 +113,62 @@ div.page-wrapper {
 	z-index : 2;
 }
 
-section.intro {
+#zen-intro {
 	background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v500-ning-15-retrofuturism_1.jpg?bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&q=80&usm=15&vib=3&w=1300&s=ac1ae3edf506486e0c1bc428ecdbd6a7');
     background-repeat: no-repeat;
     background-size: cover;
 	padding : 5% 10%;
 }
 
-section.intro div.summary {
+#zen-summary {
 	color: rgb(255, 255, 255, 0.75);
 	padding: 10% 0;
 	text-align: center;
 }
 
-section.intro div.preamble {
+#zen-preamble {
 	background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v718-te-236-holographicbackground_1.jpg?bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&q=80&usm=15&vib=3&w=1300&s=acc53e42c8e2973c36d2582c21c974c0');
     background-size: cover;
 	color: #fff;
 	padding: 5%;
 	border: 0.5em solid rgb(255, 255, 255, 0.5);
+	transition: all 0.5s ease-in-out;
 }
 
-div.main {
+#zen-preamble:hover {
+	background-image: url('https://wallpaperaccess.com/full/664999.jpg');
+}
+
+#zen-preamble:hover abbr[title] {
+	font-weight: bold;
+	color: #4EFBFF;
+}
+
+#zen-supporting{
 	background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v718-te-235-holographicbackground_1.jpg?bg=transparent&con=3&cs=srgb&dpr=1&fm=jpg&ixlib=php-3.1.0&q=80&usm=15&vib=3&w=1300&s=8f471a55a9349512774b18872382e3de');
 	background-size: cover;
 	background-repeat: no-repeat;
 	padding: 5%;
+}
+
+#zen-supporting abbr[title] {
+	font-weight: bold;
+}
+
+#zen-explanation abbr[title] {
+	color: #4EFBFF;
+}
+
+#zen-participation abbr[title] {
+	color: #4EFBFF;
+}
+
+#zen-benefits abbr[title] {
+	color: #4EFBFF;
+}
+
+#zen-requirements abbr[title] {
+	color: #4EFBFF;
 }
 
 aside.sidebar {
@@ -189,25 +219,25 @@ footer a:hover {
 	background-color: #B338E8;
 }
 
-div.explanation {
+#zen-explanation {
 	color : #fff;
 	padding : 5%;
 }
 
-div.participation {
+#zen-participation {
 	color: #fff;
 	padding: 5%;
 	border: 0.5em solid rgb(255, 255, 255, 0.5);
 }
 
-div.benefits {
+#zen-benefits {
 	color: #fff;
 	border-radius: 1.5em;
 	margin-top: 5%;
 	padding: 5%;
 }
 
-div.requirements {
+#zen-requirements {
 	padding: 5%;
 	margin-top: 5%;
 	border: 0.5em solid rgb(255, 255, 255, 0.5);
@@ -250,7 +280,7 @@ nav a:hover, #zen-resources a:hover {
 		margin: 1em auto;
 	}
 
-	div.benefits {
+	#zen-benefits {
 		padding: 0 5%;
 	}
 
@@ -268,11 +298,11 @@ nav a:hover, #zen-resources a:hover {
 }
 
 @media screen and (min-width: 650px, max-width: 800px) {
-	div.benefits {
+	#zen-benefits {
 		width: 39%;
 	}
 
-	div.requirements {
+	#zen-requirements {
 		width: 60%;
 		margin-bottom: 5%;
 	}
