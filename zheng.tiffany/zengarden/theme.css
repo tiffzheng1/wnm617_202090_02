@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	color: rgb(255, 255, 255, 0.25);
-	font-size: 3em;
+	font-size: 2em;
 	letter-spacing: 0.025em;
 	text-transform: uppercase;
 	text-align: center;
@@ -40,7 +40,7 @@ h1 {
 h2 {
 	color: rgb(255, 255, 255, 0.25);
 	font-weight: 900;
-	font-size: 6.5em;
+	font-size: 5em;
 	letter-spacing: 0.025em;
 	line-height: 1em;
 	text-align: center;
@@ -266,12 +266,7 @@ nav a:hover, #zen-resources a:hover {
 		z-index : 1;
 	}
 
-	#zen-intro h1 {
-		font-size: 2em;
-	}
-
 	#zen-intro h2 {
-		font-size: 5em;
 		line-height: 1.25em;
 	}
 
@@ -297,14 +292,30 @@ nav a:hover, #zen-resources a:hover {
 	}
 }
 
-@media screen and (min-width: 650px, max-width: 800px) {
+@media screen and (min-width: 800px) {
+	#zen-explanation {
+		float: left;
+		width: 45%;
+	}
+
+	#zen-participation {
+		float: left;
+		width: 50%;
+	}
+
 	#zen-benefits {
-		width: 39%;
+		float: left;
+		width: 35%;
 	}
 
 	#zen-requirements {
+		float: left;
 		width: 60%;
 		margin-bottom: 5%;
+	}
+
+	footer {
+		width: 60%;
 	}
 }
 
