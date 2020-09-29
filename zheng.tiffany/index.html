@@ -1,76 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Tiffany Zheng</title>
+	<title>Unyun App</title>
    	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-   	<link rel="stylesheet" href="css/styles.css">
+
+   	<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
+   	<link rel="stylesheet" href="css/app.css">
+
+	<script src="lib/js/jquery-2.2.4.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
 </head>
 <body>
 
-<input type="checkbox" id="menu" class="hidden">
-
-<!-- header>h1+p -->
-<header class="navbar">
-	<div class="container display-flex flex-align-center">
-		<div class="flex-none"><h1>Tiffany's CSS Practice Page</h1></div>
-		<div class="flex-stretch"></div>
-		<!-- nav.nav>ul>li*4>a[href=#article$]>{Link $} -->
-
-		<div class="flex-none menu-button">
-			<label for="menu">&equiv;</label>
+	<section data-role="page" id="signin-page">
+		<div data-role="main">
+			<form id="signin-form" data-ajax="false">
+				<div class="form-control">
+					<label for="signin-username" class="form-label">Username</label>
+					<input id="signin-username" type="" class="form-input" data-role="none" placeholder="Type your username">
+				</div>
+				<div class="form-control">
+					<label for="signin-password" class="form-label">Password</label>
+					<input id="signin-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
+				</div>
+				<div class="form-control">
+					<a href="#recent-page" class="form-button">Sign in</a>
+				</div>
+				<div class="form-control signin-alt">
+					Don't have an account?
+					<a href="#signup-page">Sign up</a>
+				</div>
+			</form>
 		</div>
+	</section>
 
-		<nav class="nav flex-none">
-			<ul class="display-flex">
-				<li><a href="#article1">Link 1</a></li>
-				<li><a href="#article2">Link 2</a></li>
-				<li><a href="#article3">Link 3</a></li>
-				<li><a href="#article4">Link 4</a></li>
+	<section data-role="page" id="signup-page">
+		<div data-role="main">
+			<div class="flex-stretch"></div>
+			<form id="signup-form" data-ajax="false">
+				<div class="form-control">
+					<label for="signup-username" class="form-label">Username</label>
+					<input id="signup-username" type="" class="form-input" data-role="none" placeholder="Type your username">
+				</div>
+				<div class="form-control">
+					<label for="signup-password" class="form-label">Password</label>
+					<input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
+				</div>
+				<div class="form-control">
+					<label for="signup-password-confirm" class="form-label">Confirm Password</label>
+					<input id="signup-password-confirm" type="password" class="form-input" data-role="none" placeholder="Confirm your password">
+				</div>
+				<div class="form-control">
+					<a href="#recent-page" class="form-button">Sign up</a>
+				</div>
+				<div class="form-control signin-alt">
+					Already have an account?
+					<a href="#signin-page">Sign in</a>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<section data-role="page" id="recent-page">
+		<header data-role="header">
+			<h1>Recent Page</h1>
+		</header>
+		<div data-role="main">
+			Map!
+		</div>
+		<footer data-role="footer">
+			<ul>
+				<li><a href="#recent-page">Recent</a></li>
+				<li><a href="#list-page">List</a></li>
+				<li><a href="#user-profile-page">Profile</a></li>
 			</ul>
-		</nav>
-	</div>
-</header>
+		</footer>
+	</section>
 
-<!-- .container>article#article$.article*4>h2{Article $}+div.article-body>p*4>lorem50 -->
-<div class="container">
-	<article id="article1" class="article">
-		<h2>Article 1</h2>
-		<div class="article-body">
-			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla eligendi laboriosam veniam, animi, assumenda delectus temporibus provident quos asperiores vitae at nobis sint sit molestiae hic numquam deleniti, nisi maiores quibusdam possimus quod. Labore, qui praesentium maxime harum, et, fuga magnam itaque laborum dolore minus assumenda beatae, vitae enim deserunt.</p>
-			<p>Doloribus consectetur incidunt optio sapiente modi quo? Voluptatem, illo. Quasi expedita iste quae iusto quia dolorum cupiditate adipisci, animi fugiat voluptates dolores blanditiis harum ducimus amet nemo veniam praesentium, dicta eveniet ipsam tempora vel accusantium sequi. In, consequuntur, praesentium. Nesciunt aperiam, cupiditate in nisi iste amet dicta illo laudantium sunt!</p>
-			<p>Quam iure laborum nobis odio, alias ducimus itaque veritatis explicabo, aperiam perferendis sint! Modi quibusdam officia impedit repellat atque sint veniam aut vitae labore, ipsum reprehenderit, vel rerum voluptas, reiciendis exercitationem id numquam similique? Vero dignissimos excepturi animi molestiae quo quam exercitationem laudantium modi eveniet magni voluptatem explicabo hic, accusamus.</p>
-			<p>Deserunt alias eum tempore beatae accusantium, similique voluptatibus ex corporis vel ratione quae perferendis blanditiis dicta soluta culpa nisi quibusdam necessitatibus tempora quo ipsam, optio ad placeat. Sapiente ea culpa laboriosam quasi, id sed voluptatum aperiam quam similique harum aliquid, rem ad officia debitis, placeat eaque eum neque quod! Nulla!</p>
+	<section data-role="page" id="list-page">
+		<header data-role="header">
+			<h1>List Page</h1>
+		</header>
+		<div data-role="main">
+			This is an unyun list
 		</div>
-	</article>
-	<article id="article2" class="article">
-		<h2>Article 2</h2>
-		<div class="article-body">
-			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis harum, hic non sapiente facilis? Ducimus minus tempore doloremque dicta corporis illo odit, nisi explicabo odio voluptates voluptatibus, esse id facilis quod, deserunt aperiam? Fuga, repellat, eligendi. Debitis sapiente dignissimos cumque non, illo saepe, esse deserunt, tempora maiores ut officia, incidunt.</p>
-			<p>Possimus repellendus fugiat aperiam odio aut earum dicta rerum sequi omnis amet excepturi perspiciatis error ex, pariatur assumenda unde numquam alias tenetur doloribus consequatur ad magni, nihil officia in. Ratione temporibus sapiente cum quisquam ab nobis rem possimus deleniti necessitatibus accusantium odit impedit, praesentium voluptatibus provident explicabo tempora voluptate quis!</p>
-			<p>Magni quos dolore voluptatum exercitationem dolorem, sed nihil, asperiores sint impedit sit est. Commodi, distinctio expedita assumenda obcaecati ullam, magni eaque voluptatum maiores a maxime hic omnis laudantium eius architecto tempora nisi accusamus corrupti rerum suscipit consequuntur possimus! Incidunt molestiae, commodi voluptates quae, ad molestias. Eius quo minima rem dolorem!</p>
-			<p>Incidunt, adipisci officiis ratione tempora amet praesentium sint quis impedit ex nisi hic, minima voluptas. Sed odio dolorum ipsam, ex. Itaque cumque animi saepe earum quibusdam. Nihil nulla rerum quidem mollitia odit, autem tenetur quod commodi libero. Cum perferendis, corporis suscipit. Itaque hic omnis labore sunt quisquam, non nobis architecto.</p>
+		<footer data-role="footer">
+			<ul>
+				<li><a href="#recent-page">Recent</a></li>
+				<li><a href="#list-page">List</a></li>
+				<li><a href="#user-profile-page">Profile</a></li>
+			</ul>
+		</footer>
+	</section>
+
+	<section data-role="page" id="user-profile-page">
+		<div data-role="main">
+			This is your profile
 		</div>
-	</article>
-	<article id="article3" class="article">
-		<h2>Article 3</h2>
-		<div class="article-body">
-			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis enim delectus accusamus expedita nihil officia, iste placeat reiciendis culpa error atque fugiat vel facilis recusandae possimus! Beatae odit laudantium, corporis voluptatem ad, minima consectetur, repellat reiciendis soluta sapiente adipisci! Architecto voluptate, ipsum iure consequatur eaque provident minima ipsa expedita ad.</p>
-			<p>Magnam, quos rem nesciunt aperiam inventore officiis unde, reprehenderit est exercitationem distinctio doloribus quam vitae ipsum ut nam modi, quisquam. Vel, aut, magnam. Quasi commodi asperiores non reiciendis vero temporibus repudiandae quae voluptas id tempora, est laudantium beatae, quam consequuntur. Magnam maiores ipsum, soluta officia eius nobis eveniet dolore earum?</p>
-			<p>Atque unde, aperiam a exercitationem quod recusandae expedita laudantium consectetur repellat omnis, iste eum et, iusto! Sint omnis eveniet voluptate dicta! Natus sed enim atque maxime temporibus consequatur officia saepe optio omnis! Voluptatibus minus quae quos veniam magni, ipsam. Exercitationem in dolores voluptatem atque vitae aliquam, inventore asperiores quibusdam quae.</p>
-			<p>Possimus ipsum, officiis perspiciatis architecto impedit alias cum modi expedita, error illum assumenda labore dolorum eius! Magnam incidunt, fugit dignissimos cumque odio atque voluptas, aut quidem unde numquam illum est. Impedit officiis repellat maxime reiciendis consequuntur cupiditate ad veniam dolor aliquam, quidem esse, deleniti vel odio exercitationem, iure adipisci nam.</p>
-		</div>
-	</article>
-	<article id="article4" class="article">
-		<h2>Article 4</h2>
-		<div class="article-body">
-			<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero distinctio molestiae maiores maxime illo quisquam laborum officiis, fugit eos sapiente, expedita nisi rem repellat totam doloremque perferendis ex molestias accusantium. Voluptatibus voluptatem facere perspiciatis ea quia eos minima exercitationem ex, earum sequi, asperiores praesentium perferendis nostrum animi sit consectetur voluptate.</p>
-			<p>Totam, recusandae reprehenderit consectetur nobis tempora eius maxime dolorem eum, sed harum sit debitis libero omnis, in fugiat exercitationem molestiae eligendi perspiciatis! Ducimus ea quam soluta reiciendis ipsum eveniet sed eligendi nisi, modi sint asperiores sapiente, quis ipsam eius vel ipsa voluptas itaque earum? Velit porro corporis ratione deserunt, dolorum!</p>
-			<p>Totam placeat ratione dignissimos quia nobis quam nulla nostrum, explicabo ullam eos, eum atque odio qui nisi cum aut reprehenderit at inventore consectetur! Delectus blanditiis architecto, explicabo odio, illo, vel, reiciendis ducimus nemo non porro nulla! Distinctio hic delectus ipsa quae, eius doloribus asperiores eum fugiat dolores cum dicta magnam!</p>
-			<p>Quam nisi suscipit nemo, vero quibusdam voluptatem assumenda voluptate laudantium atque soluta similique recusandae exercitationem quisquam aliquid, nesciunt corporis labore animi dignissimos consequatur eos repudiandae repellat. Iusto numquam repudiandae, mollitia ipsum praesentium accusantium voluptatum obcaecati hic aliquid asperiores possimus dolores exercitationem cumque dignissimos voluptates sapiente assumenda. Repudiandae, maxime itaque architecto.</p>
-		</div>
-	</article>
-</div>
+		<footer data-role="footer">
+			<ul>
+				<li><a href="#recent-page">Recent</a></li>
+				<li><a href="#list-page">List</a></li>
+				<li><a href="#user-profile-page">Profile</a></li>
+			</ul>
+		</footer>
+	</section>
+
+	<section data-role="page" id="unyun-profile-page">
+		<div data-role="main"></div>
+	</section>
 
 </body>
 </html>
