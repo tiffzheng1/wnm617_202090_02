@@ -8,6 +8,12 @@
 	--font-sans: 'Roboto', 'Open Sans', 'Segoe UI', sans-serif;
 	--font-serif: 'Cambria', 'Georgia', serif;
 
+	--color-main-dark: #4C6B2E;
+	--color-main-medium-dark: #669933;
+	--color-main-medium: #7FCC33;
+	--color-main-light: #99E052;
+	--color-main-lighter: #DEFEBF;
+
 	--color-neutral-dark: #333;
 	--color-neutral-medium-dark: #888;
 	--color-neutral-medium: #aaa;
@@ -204,11 +210,14 @@ code {
 	display: inline-block;
 	width: 100%;
 	border-width: 0;
-	background-color: var(--color-neutral-lighter);
+	color: var(--color-neutral-medium-dark);
 	font: inherit;
 	padding: 0.5em 1em;
 	margin: 0;
 	outline: 0;
+	border: 1px solid var(--color-neutral-medium-dark);
+	border-radius: 6px;
+    box-shadow: inset 0px 0px 4px rgba(102, 119, 153, 0.2);
 }
 
 .form-button {
@@ -236,6 +245,45 @@ code {
 #signin-page [data-role="main"] {
 	display: flex;
 	flex-direction: column;
+}
+
+#recent-page [data-role='main'] {
+    background-image: url('../images/map-koreatown.png');
+    background-position: center;
+    background-size: cover;
+ }
+
+ #list-page [data-role='main'] ul {
+ 	padding-left: 2em;
+ }
+
+  #list-page [data-role='main'] ul li {
+ 	display: flex;
+    padding: 1em 0;
+ }
+
+  #list-page [data-role='main'] ul li img {
+  	margin-right: 1em;
+  }
+
+
+
+
+
+
+/* Buttons */
+
+.button-primary {
+	background-color: var(--color-main-medium);
+	color: var(--color-white);
+	border-radius: 6px;
+	box-shadow: 0px 3px 12px rgba(76, 107, 46, 0.2);
+}
+
+/* Links */
+
+.link-primary {
+	color: var(--color-main-medium);
 }
 
 
