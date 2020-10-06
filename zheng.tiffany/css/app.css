@@ -266,6 +266,11 @@ code {
   	margin-right: 1em;
   }
 
+  .overscroll {
+  	width: 100%;
+  	height: 100%;
+  	overflow: auto;
+  }
 
 
 
@@ -347,6 +352,146 @@ code {
 	display: block;
 	padding: 0 1em;
 }
+
+
+
+/*Modals*/
+
+.modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.3s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal.active {
+   opacity: 1;
+}
+
+.modal-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+}
+
+/*Modal Popup*/
+
+.modal-popup {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,calc(-50% + 3em));
+   transition: all 0.3s;
+   width: 80vw;
+}
+
+.modal-body {
+    background-color: var(--color-white);
+    padding: 1em;
+}
+
+.modal-head, .modal-foot {
+    background-color: var(--color-neutral-lighter);
+    padding: 0.5em 1em;
+}
+
+.modal.active .modal-back,
+.modal.active .modal-popup {
+    pointer-events: initial;
+}
+
+.modal.active .modal-popup {
+   transform:translate(-50%,-50%);
+}
+
+
+/* Modal Drawer */
+
+.modal-drawer {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transition:all 0.3s;
+}
+
+.modal-drawer.left,
+.modal-drawer.right {
+   height: 100%;
+   width: 70vw;
+}
+
+.modal-drawer.left { 
+	left: 0; 
+	transform: translateX(-100%); 
+}
+
+.modal-drawer.right { 
+	right: 0;
+	transform: translateX(100%); 
+}
+
+.modal-drawer.top,
+.modal-drawer.bottom {
+   height: 30vh;
+   width: 100%;
+}
+
+.modal.active .modal-drawer {
+	transform: translate(0);
+	pointer-events: initial;
+}
+
+.modal-drawer .modal-body {
+   flex: 1 1 100%;
+}
+
+
+
+
+/*Floater*/
+
+.floater { position: absolute; }
+.floater.right { right: 1em; }
+.floater.left { left: 1em; }
+.floater.top { top: 1em; }
+.floater.bottom { bottom: 1em; }
+
+
+/*Circle Button*/
+
+.button-circle {
+	background-color: white;
+	line-height: 3rem;
+	width: 3rem;
+	display: inline-block;
+	text-align: center;
+	border-radius: 2rem;
+	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+	font-size: 1.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

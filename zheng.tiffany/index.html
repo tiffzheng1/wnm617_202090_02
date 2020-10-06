@@ -9,6 +9,7 @@
    	<link rel="stylesheet" href="css/app.css">
 
 	<script src="lib/js/jquery-2.2.4.min.js"></script>
+	<script src="js/signin.js"></script>
 	<script src="js/app.js"></script>
 	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
 
@@ -30,7 +31,7 @@
 					<input id="signin-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
 				</div>
 				<div class="form-control">
-					<a href="#recent-page" class="form-button button-primary">Sign in</a>
+					<input type="submit" value="Sign in" class="form-button button-primary" data-role="none">
 				</div>
 				<div class="form-control signin-alt">
 					Don't have an account?
@@ -73,7 +74,18 @@
 		<header data-role="header">
 			<h1>Recent Page</h1>
 		</header>
-		<div data-role="main"></div>
+		<div data-role="main">
+			<div class="floater bottom right">
+				<div class="button-circle" data-activate="#recent-add-modal">&plus;</div>
+			</div>
+			<div class="modal" id="recent-add-modal">
+            	<div class="modal-back" data-deactivate="#recent-add-modal"></div>
+	            <div class="modal-drawer left">
+	               <div class="modal-head">head</div>
+	               <div class="modal-body">body</div>
+	            </div>
+         	</div>
+		</div>
 		<footer data-role="footer">
 			<ul>
 				<li><a href="#recent-page">Recent</a></li>
@@ -86,43 +98,57 @@
 	<section data-role="page" id="list-page">
 		<header data-role="header">
 			<h1>List Page</h1>
+			<ul>
+				<li class="flex-stretch"></li>
+				<li><a href="#" data-activate="#list-add-modal">&plus;</a></li>
+			</ul>
 		</header>
 		<div data-role="main">
-         <ul>
-            <li>
-            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-            	<a href="#unyun-profile-page">Unyun 1</a>
-            </li>
-            <li>
-            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-            	<a href="#unyun-profile-page">Unyun 2</a>
-            </li>
-            <li>
-            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-            	<a href="#unyun-profile-page">Unyun 3</a>
-            </li>
-            <li>
-            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-            	<a href="#unyun-profile-page">Unyun 4</a>
-            </li>
-            <li>
-            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-            	<a href="#unyun-profile-page">Unyun 5</a>
-            </li>
-            <li>
-            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-            	<a href="#unyun-profile-page">Unyun 6</a>
-            </li>
-            <li>
-            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-            	<a href="#unyun-profile-page">Unyun 7</a>
-            </li>
-            <li>
-            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-            	<a href="#unyun-profile-page">Unyun 8</a>
-            </li>
-         </ul>
-      </div>
+			<div class="overscroll">
+		        <ul>
+		            <li>
+		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
+		            	<a href="#unyun-profile-page">Unyun 1</a>
+		            </li>
+		            <li>
+		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
+		            	<a href="#unyun-profile-page">Unyun 2</a>
+		            </li>
+		            <li>
+		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
+		            	<a href="#unyun-profile-page">Unyun 3</a>
+		            </li>
+		            <li>
+		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
+		            	<a href="#unyun-profile-page">Unyun 4</a>
+		            </li>
+		            <li>
+		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
+		            	<a href="#unyun-profile-page">Unyun 5</a>
+		            </li>
+		            <li>
+		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
+		            	<a href="#unyun-profile-page">Unyun 6</a>
+		            </li>
+		            <li>
+		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
+		            	<a href="#unyun-profile-page">Unyun 7</a>
+		            </li>
+		            <li>
+		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
+		            	<a href="#unyun-profile-page">Unyun 8</a>
+		            </li>
+		            <li>
+		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
+		            	<a href="#unyun-profile-page">Unyun 9</a>
+		            </li>
+		            <li>
+		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
+		            	<a href="#unyun-profile-page">Unyun 10</a>
+		            </li>
+		        </ul>
+	        </div>
+      	</div>
 		<footer data-role="footer">
 			<ul>
 				<li><a href="#recent-page">Recent</a></li>
@@ -130,12 +156,35 @@
 				<li><a href="#user-profile-page">Profile</a></li>
 			</ul>
 		</footer>
+		<div class="modal" id="list-add-modal">
+			<div class="modal-back" data-deactivate="#list-add-modal"></div>
+			<form id="form" data-ajax="false" class="modal-popup">
+				<div class="modal-head">head</div>
+				<div class="modal-body">
+					<div class="form-control">
+		                <label for="list-add-location" class="form-label">Location</label>
+		                <input id="list-add-location" type="text" class="form-input" data-role="none" placeholder="Enter location">
+		            </div>
+					<div class="form-control">
+		                <label for="list-add-price" class="form-label">Price</label>
+		                <input id="list-add-price" type="text" class="form-input" data-role="none" placeholder="Enter Price">
+		            </div>
+		            <div class="form-control">
+		                <label for="list-add-quantity" class="form-label">Quantity</label>
+		                <input id="list-add-quantity" type="text" class="form-input" data-role="none" placeholder="Enter quantity">
+		            </div>
+				</div>
+				<div class="modal-foot">
+					<input type="submit" value="Save" data-role="none">
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<section data-role="page" id="user-profile-page">
 		<div data-role="main" class="center">
 	         User Profile
-	         <p><a href="#signin-page">Logout</a></p>
+	         <p><a href="#" class="js-logout">Logout</a></p>
       	</div>
 		<footer data-role="footer">
 			<ul>
