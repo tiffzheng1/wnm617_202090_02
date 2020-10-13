@@ -39,6 +39,13 @@
 				</div>
 			</form>
 		</div>
+
+		<div class="modal" id="signin-warning-modal">
+			<div class="modal-toast top" data-deactivate="#signin-warning-modal">
+				<div class="message">Message</div>
+			</div>
+		</div>
+
 	</section>
 
 	<section data-role="page" id="signup-page">
@@ -60,7 +67,7 @@
 					<input id="signup-password-confirm" type="password" class="form-input" data-role="none" placeholder="Confirm your password">
 				</div>
 				<div class="form-control">
-					<a href="#recent-page" class="form-button button-primary">Sign up</a>
+					<a href="#map-page" class="form-button button-primary">Sign up</a>
 				</div>
 				<div class="form-control signin-alt">
 					Already have an account?
@@ -70,112 +77,205 @@
 		</div>
 	</section>
 
-	<section data-role="page" id="recent-page">
+	<section data-role="page" id="map-page">
 		<header data-role="header">
-			<h1>Recent Page</h1>
+			<div class="form-control search-bar">
+				<i class="search-icon"></i>
+		        <input id="search" type="text" class="form-input" data-role="none" placeholder="Search by unyun name or location">
+		    </div>
 		</header>
 		<div data-role="main">
 			<div class="floater bottom right">
-				<div class="button-circle" data-activate="#recent-add-modal">&plus;</div>
+				<div class="button-circle" data-activate="#map-add-modal">&plus;</div>
 			</div>
-			<div class="modal" id="recent-add-modal">
-            	<div class="modal-back" data-deactivate="#recent-add-modal"></div>
+			<div class="modal" id="map-add-modal">
+            	<div class="modal-back" data-deactivate="#map-add-modal"></div>
 	            <div class="modal-drawer left">
-	               <div class="modal-head">head</div>
-	               <div class="modal-body">body</div>
+	               <div class="modal-body">
+		               	<ul>
+		               		<li><a href="#">New Unyun to Track</a></li>
+		               		<li><a href="#">Location of an Unyun</a></li>
+		               	</ul>
+	            	</div>
 	            </div>
          	</div>
 		</div>
 		<footer data-role="footer">
 			<ul>
-				<li><a href="#recent-page">Recent</a></li>
-				<li><a href="#list-page">List</a></li>
-				<li><a href="#user-profile-page">Profile</a></li>
+				<li>
+					<a href="#map-page" class="active-tab">
+						<img class="nav-icon" src="images/icons/map-green.svg" alt="Map icon">
+						<div class="nav-label">Map</div>
+					</a>
+				</li>
+				<li>
+					<a href="#list-page">
+						<img class="nav-icon" src="images/icons/list-gray.svg" alt="List icon">
+						<div class="nav-label">List</div>
+					</a>
+				</li>
+				<li>
+					<a href="#user-profile-page">
+						<img class="nav-icon" src="images/icons/user-gray.svg" alt="Profile icon">
+						<div class="nav-label">Profile</div>
+					</a>
+				</li>
 			</ul>
 		</footer>
 	</section>
 
 	<section data-role="page" id="list-page">
 		<header data-role="header">
-			<h1>List Page</h1>
+			<h1>Your Unyuns</h1>
 			<ul>
 				<li class="flex-stretch"></li>
-				<li><a href="#" data-activate="#list-add-modal">&plus;</a></li>
+				<li>
+					<a href="#" data-activate="#list-add-modal">
+						<img src="images/icons/plus-gray.svg" alt="Plus icon">
+					</a>
+				</li>
 			</ul>
 		</header>
 		<div data-role="main">
 			<div class="overscroll">
 		        <ul>
 		            <li>
-		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-		            	<a href="#unyun-profile-page">Unyun 1</a>
+		            	<a href="#unyun-profile-page">
+			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div class="unyun-info flex-stretch">
+			            		<div class="unyun-name">Unyun 1</div>
+			            		<div class="unyun-location">Zion Market</div>
+			            	</div>
+			            	<div class="entry-date flex-none">Oct 13, 2020</div>
+			            </a>
 		            </li>
 		            <li>
-		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-		            	<a href="#unyun-profile-page">Unyun 2</a>
+		            	<a href="#unyun-profile-page">
+			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div class="unyun-info flex-stretch">
+			            		<div class="unyun-name">Unyun 2</div>
+			            		<div class="unyun-location">H-Mart</div>
+			            	</div>
+			            	<div class="entry-date flex-none">Oct 6, 2020</div>
+			            </a>
 		            </li>
 		            <li>
-		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-		            	<a href="#unyun-profile-page">Unyun 3</a>
+		            	<a href="#unyun-profile-page">
+			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div class="unyun-info flex-stretch">
+			            		<div class="unyun-name">Unyun 3</div>
+			            		<div class="unyun-location">Galleria</div>
+			            	</div>
+			            	<div class="entry-date flex-none">Sep 30, 2020</div>
+			            </a>
 		            </li>
 		            <li>
-		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-		            	<a href="#unyun-profile-page">Unyun 4</a>
+		            	<a href="#unyun-profile-page">
+			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div class="unyun-info flex-stretch">
+			            		<div class="unyun-name">Unyun 4</div>
+			            		<div class="unyun-location">Trader Joe's</div>
+			            	</div>
+			            	<div class="entry-date flex-none">Sep 30, 2020</div>
+			            </a>
 		            </li>
 		            <li>
-		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-		            	<a href="#unyun-profile-page">Unyun 5</a>
+		            	<a href="#unyun-profile-page">
+			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div class="unyun-info flex-stretch">
+			            		<div class="unyun-name">Unyun 5</div>
+			            		<div class="unyun-location">Ralph's</div>
+			            	</div>
+			            	<div class="entry-date flex-none">Sep 22, 2020</div>
+			            </a>
 		            </li>
 		            <li>
-		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-		            	<a href="#unyun-profile-page">Unyun 6</a>
+		            	<a href="#unyun-profile-page">
+			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div class="unyun-info flex-stretch">
+			            		<div class="unyun-name">Unyun 6</div>
+			            		<div class="unyun-location">Zion Market</div>
+			            	</div>
+			            	<div class="entry-date flex-none">Sep 16, 2020</div>
+			            </a>
 		            </li>
 		            <li>
-		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-		            	<a href="#unyun-profile-page">Unyun 7</a>
+		            	<a href="#unyun-profile-page">
+			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div class="unyun-info flex-stretch">
+			            		<div class="unyun-name">Unyun 7</div>
+			            		<div class="unyun-location">Vons</div>
+			            	</div>
+			            	<div class="entry-date flex-none">Sep 13, 2020</div>
+			            </a>
 		            </li>
 		            <li>
-		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-		            	<a href="#unyun-profile-page">Unyun 8</a>
+		            	<a href="#unyun-profile-page">
+			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div class="unyun-info flex-stretch">
+			            		<div class="unyun-name">Unyun 8</div>
+			            		<div class="unyun-location">Zion Market</div>
+			            	</div>
+			            	<div class="entry-date flex-none">Sep 5, 2020</div>
+			            </a>
 		            </li>
 		            <li>
-		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-		            	<a href="#unyun-profile-page">Unyun 9</a>
+		            	<a href="#unyun-profile-page">
+			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div class="unyun-info flex-stretch">
+			            		<div class="unyun-name">Unyun 9</div>
+			            		<div class="unyun-location">Trader Joe's</div>
+			            	</div>
+			            	<div class="entry-date flex-none">Aug 28, 2020</div>
+			            </a>
 		            </li>
 		            <li>
-		            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2em;height:2em;">
-		            	<a href="#unyun-profile-page">Unyun 10</a>
+		            	<a href="#unyun-profile-page">
+			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div class="unyun-info flex-stretch">
+			            		<div class="unyun-name">Unyun 10</div>
+			            		<div class="unyun-location">Zion Market</div>
+			            	</div>
+			            	<div class="entry-date flex-none">Aug 21, 2020</div>
+			            </a>
 		            </li>
 		        </ul>
 	        </div>
       	</div>
 		<footer data-role="footer">
 			<ul>
-				<li><a href="#recent-page">Recent</a></li>
-				<li><a href="#list-page">List</a></li>
-				<li><a href="#user-profile-page">Profile</a></li>
+				<li>
+					<a href="#map-page">
+						<img class="nav-icon" src="images/icons/map-gray.svg" alt="Map icon">
+						<div class="nav-label">Map</div>
+					</a>
+				</li>
+				<li>
+					<a href="#list-page" class="active-tab">
+						<img class="nav-icon" src="images/icons/list-green.svg" alt="List icon">
+						<div class="nav-label">List</div>
+					</a>
+				</li>
+				<li>
+					<a href="#user-profile-page">
+						<img class="nav-icon" src="images/icons/user-gray.svg" alt="Profile icon">
+						<div class="nav-label">Profile</div>
+					</a>
+				</li>
 			</ul>
 		</footer>
 		<div class="modal" id="list-add-modal">
 			<div class="modal-back" data-deactivate="#list-add-modal"></div>
 			<form id="form" data-ajax="false" class="modal-popup">
-				<div class="modal-head">head</div>
+				<div class="modal-head">Add New Unyun to Track</div>
 				<div class="modal-body">
 					<div class="form-control">
-		                <label for="list-add-location" class="form-label">Location</label>
-		                <input id="list-add-location" type="text" class="form-input" data-role="none" placeholder="Enter location">
-		            </div>
-					<div class="form-control">
-		                <label for="list-add-price" class="form-label">Price</label>
-		                <input id="list-add-price" type="text" class="form-input" data-role="none" placeholder="Enter Price">
-		            </div>
-		            <div class="form-control">
-		                <label for="list-add-quantity" class="form-label">Quantity</label>
-		                <input id="list-add-quantity" type="text" class="form-input" data-role="none" placeholder="Enter quantity">
+		                <label for="list-add-unyun" class="form-label">Unyun Name</label>
+		                <input id="list-add-unyun" type="text" class="form-input" data-role="none" placeholder="Enter Unyun name">
 		            </div>
 				</div>
 				<div class="modal-foot">
-					<input type="submit" value="Save" data-role="none">
+					<input class="form-button button-primary" type="submit" value="Save" data-role="none">
 				</div>
 			</div>
 		</div>
@@ -183,28 +283,99 @@
 
 	<section data-role="page" id="user-profile-page">
 		<div data-role="main" class="center">
-	         User Profile
-	         <p><a href="#" class="js-logout">Logout</a></p>
+			<ul class="profile-header">
+				<li class="flex-stretch"></li>
+				<li>
+					<a href="#" data-toggle="#profile-add-modal">
+						<img src="images/icons/more-vertical-gray.svg" alt="More options icon">
+					</a>
+				</li>
+			</ul>
+			<div class="modal" id="profile-add-modal">
+            	<div class="modal-back" data-toggle="#profile-add-modal"></div>
+	            <div class="modal-drawer left">
+	             	<div class="modal-body">
+	             		<a href="#" class="js-logout">Logout</a>
+	            	</div>
+	            </div>
+         	</div>
+			<div class="profile-info">
+				<img src="images/icons/user-placeholder.svg" alt="User profile photo">
+				<div class="user-name">Tiffany Zheng</div>
+			</div>
+			<hr>
       	</div>
 		<footer data-role="footer">
 			<ul>
-				<li><a href="#recent-page">Recent</a></li>
-				<li><a href="#list-page">List</a></li>
-				<li><a href="#user-profile-page">Profile</a></li>
+				<li>
+					<a href="#map-page">
+						<img class="nav-icon" src="images/icons/map-gray.svg" alt="Map icon">
+						<div class="nav-label">Map</div>
+					</a>
+				</li>
+				<li>
+					<a href="#list-page">
+						<img class="nav-icon" src="images/icons/list-gray.svg" alt="List icon">
+						<div class="nav-label">List</div>
+					</a>
+				</li>
+				<li>
+					<a href="#user-profile-page" class="active-tab">
+						<img class="nav-icon" src="images/icons/user-green.svg" alt="Profile icon">
+						<div class="nav-label">Profile</div>
+					</a>
+				</li>
 			</ul>
 		</footer>
 	</section>
 
 	<section data-role="page" id="unyun-profile-page">
-		 <header data-role="header">
-         <h1>Unyun Page</h1>
-         <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-         </ul>
-      </header>
-      <div data-role="main">
-         Unyun Profile
-      </div>
+		<header data-role="header">
+	         <h1>Unyun</h1>
+	         <ul>
+	            <li>
+	            	<a href="#" data-rel="back">
+	            		<img src="images/icons/arrow-left-gray.svg" alt="Back icon">
+	            	</a>
+	            </li>
+	            <li class="flex-stretch"></li>
+	            <li>
+					<a href="#" data-toggle="#unyun-add-modal">
+						<img src="images/icons/more-vertical-gray.svg" alt="More options icon">
+					</a>
+				</li>
+	         </ul>
+      	</header>
+      	<div data-role="main">
+        	<div class="modal" id="unyun-add-modal">
+	            <div class="modal-back" data-toggle="#unyun-add-modal"></div>
+		        <div class="modal-drawer left">
+		            <div class="modal-body">
+		             	<p><a href="#" class="js-logout">Edit Unyun</a></p>
+		             	<p><a href="#" class="js-logout">Delete Unyun</a></p>
+		            </div>
+		        </div>
+        	</div>
+        	<div class="unyun-profile-photo"></div>
+	        <div class="unyun-profile-info">
+	        	<div class="form-control">
+					<label for="unyun-profile-location" class="form-label">Location</label>
+					<input id="unyun-profile-location" type="" class="unyun-input-default" data-role="none" value="Zion Market">
+				</div>
+				<div class="form-control">
+					<label for="unyun-profile-price" class="form-label">Price</label>
+					<input id="unyun-profile-price" type="" class="unyun-input-default" data-role="none" value="$0.99">
+				</div>
+				<div class="form-control">
+					<label for="unyun-profile-quantity" class="form-label">Quantity</label>
+					<input id="unyun-profile-quantity" type="" class="unyun-input-default" data-role="none" value="10">
+				</div>
+				<div class="form-control">
+					<label for="unyun-profile-unit-price" class="form-label">Unit price</label>
+					<input id="unyun-profile-unit-price" type="" class="unyun-input-default" data-role="none" value="$0.10">
+				</div>
+	        </div>
+      	</div>
 	</section>
 
 </body>

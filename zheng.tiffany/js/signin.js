@@ -1,20 +1,39 @@
 
 
+const makeWarning = (target,message) => {
+	$(target).addClass("active")
+		.find(".message").html(message);
+	setTimeout(()=>{
+		$(target).removeClass("active")
+	},4000);
+}
+
+
+
 const checkSigninForm = () => {
 	let user = $("#signin-username").val();
 	let pass = $("#signin-password").val();
 
 	console.log(user,pass)
 
+	if(user=='' || pass=='') {
+		makeWarning("#signin-warning-modal","Enter a username and password");
+		return;
+	}
+
 	if(user == 'user' && pass=='pass') {
 		// Log in
 		console.log('success');
 		// Data is kept as long as browser stays open
 		sessionStorage.userId = 3;
+		$("#signin-form")[0].reset();
 	} else { 
 		// Don't log in
 		console.log('failure');
 		sessionStorage.removeItem('userId');
+
+		// Error login message
+		makeWarning("#signin-warning-modal","Incorrect username and/or password")
 	}
 
 	// Separation of concerns: allow to do one thing without doing another
@@ -35,7 +54,7 @@ const checkUserId = () => {
 			$.mobile.navigate("#signin-page");
 	} else {
 		// logged in
-		$.mobile.navigate("#recent-page");
+		$.mobile.navigate("#map-page");
 	}
 
 }

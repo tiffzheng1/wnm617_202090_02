@@ -14,11 +14,11 @@
 	--color-main-light: #99E052;
 	--color-main-lighter: #DEFEBF;
 
-	--color-neutral-dark: #333;
-	--color-neutral-medium-dark: #888;
-	--color-neutral-medium: #aaa;
-	--color-neutral-light: #ddd;
-	--color-neutral-lighter: #eee;
+	--color-neutral-dark: #4B4B4B;
+	--color-neutral-medium-dark: #7D7D7D;
+	--color-neutral-medium: #AFAFAF;
+	--color-neutral-light: #E5E5E5;
+	--color-neutral-lighter: #F7F7F7;
 
 	--color-black: #000;
 	--color-white: #fff;
@@ -236,6 +236,7 @@ code {
 	padding: 1em;
 	text-align: center;
 	font-size: 0.8em;
+	color: var(--color-neutral-dark);
 }
 
 #signin-form, #signup-form {
@@ -247,7 +248,7 @@ code {
 	flex-direction: column;
 }
 
-#recent-page [data-role='main'] {
+#map-page [data-role='main'] {
     background-image: url('../images/map-koreatown.png');
     background-position: center;
     background-size: cover;
@@ -257,7 +258,7 @@ code {
  	padding-left: 2em;
  }
 
-  #list-page [data-role='main'] ul li {
+  #list-page [data-role='main'] ul li a {
  	display: flex;
     padding: 1em 0;
  }
@@ -271,6 +272,67 @@ code {
   	height: 100%;
   	overflow: auto;
   }
+
+
+/*  Navigation Buttons */
+
+footer li {
+	display: flex;
+	flex-direction: column;
+}
+
+.nav-icon {
+	padding-top: 0.25em;
+    padding-bottom: 0.25em;
+}
+
+.nav-label {
+    padding-bottom: 0.25em;
+}
+
+footer ul li a {
+	color: var(--color-neutral-dark);
+	outline: none;
+}
+
+a.active-tab {
+    color: var(--color-main-medium);
+}
+
+.ui-link:active, .ui-link:visited {
+	text-decoration: none;
+}
+
+
+/*Search bar*/
+
+.search-bar i {
+    position: absolute;
+}
+
+.search-bar {
+    width: 90%;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-icon {
+	background-image: url('../images/icons/search-light-gray.svg');
+	background-repeat: no-repeat;
+	background-size: contain;
+    padding: 12px;
+    top: 22px;
+    left: 28px;
+}
+
+.search-bar input {
+	text-align: center;
+}
+
+#map-page .ui-header {
+	height: auto;
+}
 
 
 
@@ -311,11 +373,30 @@ code {
 	position: relative;
 }
 
+#list-page [data-role='main'] ul {
+	margin: 0;
+    padding-left: 1em;
+}
+
+.unyun-location {
+    padding-top: 0.375em;
+    font-size: 0.875em;
+    font-weight: 500;
+    color: var(--color-neutral-medium-dark);
+}
+
+.entry-date {
+    padding-right: 1em;
+    font-size: 0.875em;
+    font-weight: 500;
+    color: var(--color-neutral-medium);
+}
+
 .ui-header,
 .ui-footer {
 	flex: none;
-	height: var(--header-height);
-	line-height: var(--header-height);
+	/*height: var(--header-height);*/
+	/*line-height: var(--header-height);*/
 	border-width: 0;
 	background-color: var(--color-white);
 	box-shadow: 0 0 5px rgba(0,0,0,0.15);
@@ -323,18 +404,26 @@ code {
 	position: relative;
 }
 
+.ui-header {
+	height: var(--header-height);
+}
+
 .ui-header .ui-title {
 	margin: 0;
-	padding: 0;
+	padding: 1em 0;
 	position: absolute;
-	top: 0;
-	left: 0;
+	/*top: 0;
+	left: 0;*/
 	width: 100%;
 	text-align: center;
+	font-family: var(--font-sans);
+	font-size: 1.25em;
+	color: var(--color-neutral-dark);
 }
 
 .ui-header ul,
-.ui-footer ul {
+.ui-footer ul,
+.profile-header {
 	position: relative;
 	display: flex;
 	list-style-type: none;
@@ -350,10 +439,55 @@ code {
 .ui-header a,
 .ui-footer a {
 	display: block;
-	padding: 0 1em;
+	padding: 0.5em 1em;
+}
+
+.ui-header a {
+	padding: 1em;
 }
 
 
+/*Profile Page*/
+
+.profile-info {
+	padding: 1em;
+    padding-top: 0;
+}
+
+.profile-header li a img {
+	padding: 1em;
+}
+
+.user-name {
+    font-size: 1.25em;
+    color: var(--color-neutral-dark);
+    padding-top: 1em;
+}
+
+#user-profile-page [data-role='main'] hr {
+	width: 90%;
+}
+
+
+/*Unyun Profile Page*/
+
+.unyun-profile-photo {
+	width: 100%;
+    height: 30%;
+    background-image: url(../images/green-onions-1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.unyun-profile-info {
+    margin: 1em;
+}
+
+input.unyun-input-default {
+    border: none;
+    font-size: 1em;
+    color: var(--color-neutral-dark);
+}
 
 /*Modals*/
 
@@ -365,6 +499,7 @@ code {
     transition: all 0.3s;
     opacity: 0;
     pointer-events: none;
+    z-index: 10;
 }
 
 .modal.active {
@@ -377,6 +512,44 @@ code {
     height: 100%;
     background-color: rgba(0,0,0,0.7);
 }
+
+.modal-body ul {
+    margin: 0;
+    padding-left: 0;
+ }
+
+ .modal-body ul li {
+    padding-bottom: 1em;
+}
+
+.modal-toast {
+	position: absolute;
+	width: 90%;
+	background-color: var(--color-neutral-light);
+	color: var(--color-neutral-dark);
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+	border-radius: 0.2em;
+	padding: 1em;
+	text-align: center;
+	left: 50%;
+	transform: all 0.3s;
+}
+
+.modal-toast.top {
+	top: 1em;
+	transform: translate(-50%, -1em);
+}
+
+.modal-toast.bottom {
+	bottom: 1em;
+	transform: translate(-50%, 1em);
+}
+
+.modal.active .modal-toast {
+	transform: translate(-50%, 0);
+	pointer-events: initial;
+}
+
 
 /*Modal Popup*/
 
