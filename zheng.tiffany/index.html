@@ -19,7 +19,7 @@
 	<section data-role="page" id="signin-page">
 		<div data-role="main" class="display-flex flex-column">
 			<div class="flex-stretch display-flex align-center justify-center">
-				<img src="images/unyun-logo.svg" style="width:80vw;height:80vw;" alt="Unyun Logo">
+				<img src="images/icons/unyun-logo.svg" style="width:80vw;height:80vw;" alt="Unyun Logo">
 			</div>
 			<form id="signin-form" data-ajax="false">
 				<div class="form-control">
@@ -51,7 +51,7 @@
 	<section data-role="page" id="signup-page">
 		<div data-role="main">
 			<div class="flex-stretch display-flex align-center justify-center margin-top">
-				<img src="images/unyun-logo.svg" style="width:76vw;height:76vw;" alt="Unyun Logo">
+				<img src="images/icons/unyun-logo.svg" style="width:76vw;height:76vw;" alt="Unyun Logo">
 			</div>
 			<form id="signup-form" data-ajax="false">
 				<div class="form-control">
@@ -85,10 +85,28 @@
 		    </div>
 		</header>
 		<div data-role="main">
-			<div class="floater bottom right">
-				<div class="button-circle" data-activate="#map-add-modal">&plus;</div>
-			</div>
-			<div class="modal" id="map-add-modal">
+			<a href="#unyun-profile-page">
+				<img src="images/icons/map-pin-green.svg" class="map-pin" id="location-1">
+			</a>
+			<a href="#unyun-profile-page">
+				<img src="images/icons/map-pin-green.svg" class="map-pin" id="location-2">
+			</a>
+			<a href="#unyun-profile-page">
+				<img src="images/icons/map-pin-green.svg" class="map-pin" id="location-3">
+			</a>
+			<a href="#unyun-profile-page">
+				<img src="images/icons/map-pin-green.svg" class="map-pin" id="location-4">
+			</a>
+			<a href="#unyun-profile-page">
+				<img src="images/icons/map-pin-green.svg" class="map-pin" id="location-5">
+			</a>
+			<a href="#unyun-profile-page">
+				<img src="images/icons/map-pin-green.svg" class="map-pin" id="location-6">
+			</a>
+			<a class="floater bottom right" href="#add-location-page">
+				<div class="button-circle">&plus;</div>
+			</a>
+			<!-- <div class="modal" id="map-add-modal">
             	<div class="modal-back" data-deactivate="#map-add-modal"></div>
 	            <div class="modal-drawer left">
 	               <div class="modal-body">
@@ -98,7 +116,7 @@
 		               	</ul>
 	            	</div>
 	            </div>
-         	</div>
+         	</div> -->
 		</div>
 		<footer data-role="footer">
 			<ul>
@@ -141,19 +159,19 @@
 		        <ul>
 		            <li>
 		            	<a href="#unyun-profile-page">
-			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div id="unyun-1" class="unyun-thumbnail"></div>
 			            	<div class="unyun-info flex-stretch">
-			            		<div class="unyun-name">Unyun 1</div>
-			            		<div class="unyun-location">Zion Market</div>
+			            		<div class="unyun-name">Green onions</div>
+			            		<div class="unyun-location">Trader Joe's</div>
 			            	</div>
 			            	<div class="entry-date flex-none">Oct 13, 2020</div>
 			            </a>
 		            </li>
 		            <li>
 		            	<a href="#unyun-profile-page">
-			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div id="unyun-2" class="unyun-thumbnail"></div>
 			            	<div class="unyun-info flex-stretch">
-			            		<div class="unyun-name">Unyun 2</div>
+			            		<div class="unyun-name">Tomatoes</div>
 			            		<div class="unyun-location">H-Mart</div>
 			            	</div>
 			            	<div class="entry-date flex-none">Oct 6, 2020</div>
@@ -161,9 +179,9 @@
 		            </li>
 		            <li>
 		            	<a href="#unyun-profile-page">
-			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div id="unyun-3" class="unyun-thumbnail"></div>
 			            	<div class="unyun-info flex-stretch">
-			            		<div class="unyun-name">Unyun 3</div>
+			            		<div class="unyun-name">Grapes</div>
 			            		<div class="unyun-location">Galleria</div>
 			            	</div>
 			            	<div class="entry-date flex-none">Sep 30, 2020</div>
@@ -171,9 +189,9 @@
 		            </li>
 		            <li>
 		            	<a href="#unyun-profile-page">
-			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div id="unyun-4" class="unyun-thumbnail"></div>
 			            	<div class="unyun-info flex-stretch">
-			            		<div class="unyun-name">Unyun 4</div>
+			            		<div class="unyun-name">Garlic</div>
 			            		<div class="unyun-location">Trader Joe's</div>
 			            	</div>
 			            	<div class="entry-date flex-none">Sep 30, 2020</div>
@@ -181,9 +199,9 @@
 		            </li>
 		            <li>
 		            	<a href="#unyun-profile-page">
-			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div id="unyun-5" class="unyun-thumbnail"></div>
 			            	<div class="unyun-info flex-stretch">
-			            		<div class="unyun-name">Unyun 5</div>
+			            		<div class="unyun-name">Green onions</div>
 			            		<div class="unyun-location">Ralph's</div>
 			            	</div>
 			            	<div class="entry-date flex-none">Sep 22, 2020</div>
@@ -191,9 +209,9 @@
 		            </li>
 		            <li>
 		            	<a href="#unyun-profile-page">
-			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div id="unyun-6" class="unyun-thumbnail"></div>
 			            	<div class="unyun-info flex-stretch">
-			            		<div class="unyun-name">Unyun 6</div>
+			            		<div class="unyun-name">Plums</div>
 			            		<div class="unyun-location">Zion Market</div>
 			            	</div>
 			            	<div class="entry-date flex-none">Sep 16, 2020</div>
@@ -201,9 +219,9 @@
 		            </li>
 		            <li>
 		            	<a href="#unyun-profile-page">
-			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div id="unyun-7" class="unyun-thumbnail"></div>
 			            	<div class="unyun-info flex-stretch">
-			            		<div class="unyun-name">Unyun 7</div>
+			            		<div class="unyun-name">Eggs</div>
 			            		<div class="unyun-location">Vons</div>
 			            	</div>
 			            	<div class="entry-date flex-none">Sep 13, 2020</div>
@@ -211,9 +229,9 @@
 		            </li>
 		            <li>
 		            	<a href="#unyun-profile-page">
-			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div id="unyun-8" class="unyun-thumbnail"></div>
 			            	<div class="unyun-info flex-stretch">
-			            		<div class="unyun-name">Unyun 8</div>
+			            		<div class="unyun-name">Grapes</div>
 			            		<div class="unyun-location">Zion Market</div>
 			            	</div>
 			            	<div class="entry-date flex-none">Sep 5, 2020</div>
@@ -221,9 +239,9 @@
 		            </li>
 		            <li>
 		            	<a href="#unyun-profile-page">
-			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div id="unyun-9" class="unyun-thumbnail"></div>
 			            	<div class="unyun-info flex-stretch">
-			            		<div class="unyun-name">Unyun 9</div>
+			            		<div class="unyun-name">Grapes</div>
 			            		<div class="unyun-location">Trader Joe's</div>
 			            	</div>
 			            	<div class="entry-date flex-none">Aug 28, 2020</div>
@@ -231,9 +249,9 @@
 		            </li>
 		            <li>
 		            	<a href="#unyun-profile-page">
-			            	<img src="images/unyun-default.jpg" alt="Unyun image" style="width:2.5em;height:2.5em;">
+			            	<div id="unyun-10" class="unyun-thumbnail"></div>
 			            	<div class="unyun-info flex-stretch">
-			            		<div class="unyun-name">Unyun 10</div>
+			            		<div class="unyun-name">Tomatoes</div>
 			            		<div class="unyun-location">Zion Market</div>
 			            	</div>
 			            	<div class="entry-date flex-none">Aug 21, 2020</div>
@@ -295,15 +313,30 @@
             	<div class="modal-back" data-toggle="#profile-add-modal"></div>
 	            <div class="modal-drawer left">
 	             	<div class="modal-body">
-	             		<a href="#" class="js-logout">Logout</a>
+	             		<p><a href="#edit-profile-page">Edit Profile</a></p>
+	             		<p><a href="#change-password-page">Change Password</a></p>
+	             		<p><a href="#" class="js-logout">Logout</a></p>
 	            	</div>
 	            </div>
          	</div>
 			<div class="profile-info">
-				<img src="images/icons/user-placeholder.svg" alt="User profile photo">
+				<img src="images/tiff-profile.jpg" alt="User profile photo">
 				<div class="user-name">Tiffany Zheng</div>
+				<div class="user-location">Los Angeles, CA</div>
 			</div>
 			<hr>
+			<div class="profile-stats">
+				<div class="display-flex">
+					<div class="flex-stretch profile-stat">
+						<div class="stat-label">Unyun Types</div>
+						<div class="big-number">6</div>
+					</div>
+					<div class="flex-stretch profile-stat">
+						<div class="stat-label">Locations Added</div>
+						<div class="big-number">10</div>
+					</div>
+				</div>
+			</div>
       	</div>
 		<footer data-role="footer">
 			<ul>
@@ -351,8 +384,8 @@
 	            <div class="modal-back" data-toggle="#unyun-add-modal"></div>
 		        <div class="modal-drawer left">
 		            <div class="modal-body">
-		             	<p><a href="#" class="js-logout">Edit Unyun</a></p>
-		             	<p><a href="#" class="js-logout">Delete Unyun</a></p>
+		             	<p><a href="#edit-location-page" class="js-logout">Edit Location</a></p>
+		             	<p><a href="#" class="js-logout">Delete Location</a></p>
 		            </div>
 		        </div>
         	</div>
@@ -360,23 +393,242 @@
 	        <div class="unyun-profile-info">
 	        	<div class="form-control">
 					<label for="unyun-profile-location" class="form-label">Location</label>
-					<input id="unyun-profile-location" type="" class="unyun-input-default" data-role="none" value="Zion Market">
+					<input id="unyun-profile-location" type="" class="unyun-input-default" data-role="none" value="Trader Joe's">
 				</div>
 				<div class="form-control">
 					<label for="unyun-profile-price" class="form-label">Price</label>
-					<input id="unyun-profile-price" type="" class="unyun-input-default" data-role="none" value="$0.99">
+					<input id="unyun-profile-price" type="" class="unyun-input-default" data-role="none" value="$1.29">
 				</div>
 				<div class="form-control">
 					<label for="unyun-profile-quantity" class="form-label">Quantity</label>
-					<input id="unyun-profile-quantity" type="" class="unyun-input-default" data-role="none" value="10">
+					<input id="unyun-profile-quantity" type="" class="unyun-input-default" data-role="none" value="1">
 				</div>
 				<div class="form-control">
-					<label for="unyun-profile-unit-price" class="form-label">Unit price</label>
-					<input id="unyun-profile-unit-price" type="" class="unyun-input-default" data-role="none" value="$0.10">
+					<label for="unyun-profile-unit-price" class="form-label">Units</label>
+					<input id="unyun-profile-unit-price" type="" class="unyun-input-default" data-role="none" value="item">
 				</div>
 	        </div>
       	</div>
 	</section>
+
+	<section data-role="page" id="add-location-page">
+		<header data-role="header">
+	        <h1>Add Location</h1>
+	        <ul>
+	            <li>
+	            	<a href="#" data-rel="back">
+	            		<img src="images/icons/arrow-left-gray.svg" alt="Back icon">
+	            	</a>
+	            </li>
+	            <li class="flex-stretch"></li>
+	        </ul>
+      	</header>
+		<div data-role="main" class="form-page">
+			<div class="overscroll">
+				<form action="" id="add-location-form" data-ajax="false">
+					<div class="form-control">
+						<label for="unyun-name" class="form-label">Select Unyun</label>
+						<select name="unyun-name" id="unyun-name" data-role="none" class="dropdown">
+							<option class="options" value="option1">Green onions</option>
+							<option class="options" value="option2">Tomatoes</option>
+							<option class="options" value="option3">Eggs</option>
+							<option class="options" value="option4">Garlic</option>
+							<option class="options" value="option5">Grapes</option>
+							<option class="options" value="option6">Plums</option>
+						</select>
+					</div>
+					<div class="form-control">
+						<label for="Price" class="form-label">Price</label>
+						<input type="text" class="form-input" id="price" data-role="none" placeholder="i.e. $1.00">
+					</div>
+					<div class="form-control">
+						<label for="location" class="form-label">Location</label>
+						<input type="text" class="form-input" id="location" data-role="none" placeholder="Add location">
+					</div>
+					<div class="form-control">
+						<label for="quantity" class="form-label">Quantity</label>
+						<div class="display-flex space-between">
+							<div class="flex-stretch margin-right">
+								<select name="quantity" id="quantity"  data-role="none" class="dropdown">
+									<option class="options" value="option1">1</option>
+									<option class="options" value="option2">2</option>
+									<option class="options" value="option3">3</option>
+									<option class="options" value="option4">4</option>
+									<option class="options" value="option5">5</option>
+									<option class="options" value="option6">6</option>
+									<option class="options" value="option7">7</option>
+									<option class="options" value="option8">8</option>
+									<option class="options" value="option9">9</option>
+									<option class="options" value="option10">10</option>
+								</select>
+							</div>
+							<div class="flex-stretch">
+								<select name="units" id="units"  data-role="none" class="dropdown">
+									<option class="options" value="option1">items</option>
+									<option class="options" value="option2">lb</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-upload-photo">
+						<img src="images/add-unyun-location.jpg" alt="Upload Unyun Photo">
+					</div>
+					<div class="form-control">
+						<a href="#list-page" class="form-button button-primary">Save Unyun Price</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<section data-role="page" id="edit-location-page">
+		<header data-role="header">
+	        <h1>Edit Location</h1>
+	        <ul>
+	            <li>
+	            	<a href="#" data-rel="back">
+	            		<img src="images/icons/arrow-left-gray.svg" alt="Back icon">
+	            	</a>
+	            </li>
+	            <li class="flex-stretch"></li>
+	        </ul>
+      	</header>
+		<div data-role="main" class="form-page">
+			<div class="overscroll">
+				<form action="" id="add-location-form" data-ajax="false">
+					<div class="form-control">
+						<label for="unyun-name" class="form-label">Select Unyun</label>
+						<select name="unyun-name" id="unyun-name" data-role="none" class="dropdown">
+							<option class="options" value="option1">Green onions</option>
+							<option class="options" value="option2">Tomatoes</option>
+							<option class="options" value="option3">Eggs</option>
+							<option class="options" value="option4">Garlic</option>
+							<option class="options" value="option5">Grapes</option>
+							<option class="options" value="option6">Plums</option>
+						</select>
+					</div>
+					<div class="form-control">
+						<label for="Price" class="form-label">Price</label>
+						<input type="text" class="form-input" id="price" data-role="none" value="$1.29">
+					</div>
+					<div class="form-control">
+						<label for="location" class="form-label">Location</label>
+						<input type="text" class="form-input" id="location" data-role="none" value="Trader Joe's">
+					</div>
+					<div class="form-control">
+						<label for="quantity" class="form-label">Quantity</label>
+						<div class="display-flex space-between">
+							<div class="flex-stretch margin-right">
+								<select name="quantity" id="quantity"  data-role="none" class="dropdown">
+									<option class="options" value="option1">1</option>
+									<option class="options" value="option2">2</option>
+									<option class="options" value="option3">3</option>
+									<option class="options" value="option4">4</option>
+									<option class="options" value="option5">5</option>
+									<option class="options" value="option6">6</option>
+									<option class="options" value="option7">7</option>
+									<option class="options" value="option8">8</option>
+									<option class="options" value="option9">9</option>
+									<option class="options" value="option10">10</option>
+								</select>
+							</div>
+							<div class="flex-stretch">
+								<select name="units" id="units"  data-role="none" class="dropdown">
+									<option class="options" value="option1">items</option>
+									<option class="options" value="option2">lb</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="form-upload-photo">
+						<img src="images/unyun-photos/change-unyun-photo.jpg" alt="Change Unyun Photo" style="width:100%;height:auto">
+					</div>
+					<div class="form-control">
+						<a href="#list-page" class="form-button button-primary">Save changes</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<section data-role="page" id="edit-profile-page">
+		<header data-role="header">
+	        <h1>Edit Profile</h1>
+	        <ul>
+	            <li>
+	            	<a href="#" data-rel="back">
+	            		<img src="images/icons/arrow-left-gray.svg" alt="Back icon">
+	            	</a>
+	            </li>
+	            <li class="flex-stretch"></li>
+	        </ul>
+      	</header>
+		<div data-role="main" class="form-page">
+			<div class="overscroll">
+				<form action="" id="add-location-form" data-ajax="false">
+					<div class="profile-info center margin-top">
+						<img src="images/profile-photo-hover.jpg" alt="User profile photo">
+					</div>
+					<div class="form-control">
+						<label for="profile-name" class="form-label">Name</label>
+						<input type="text" class="form-input" id="profile-name" data-role="none" value="Tiffany Zheng">
+					</div>
+					<div class="form-control">
+						<label for="profile-city" class="form-label">City</label>
+						<input type="text" class="form-input" id="profile-city" data-role="none" value="Los Angeles, CA">
+					</div>
+					<div class="form-control">
+						<label for="profile-username" class="form-label">Username</label>
+						<input type="text" class="form-input" id="profile-username" data-role="none" value="tiffzheng">
+					</div>
+					<div class="form-control">
+						<label for="profile-email-address" class="form-label">Email address</label>
+						<input type="text" class="form-input" id="profile-email-address" data-role="none" value="tiffzheng@gmail.com">
+					</div>
+					<div class="form-control">
+						<a href="#list-page" class="form-button button-primary">Save changes</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+	<section data-role="page" id="change-password-page">
+		<header data-role="header">
+	        <h1>Change Password</h1>
+	        <ul>
+	            <li>
+	            	<a href="#" data-rel="back">
+	            		<img src="images/icons/arrow-left-gray.svg" alt="Back icon">
+	            	</a>
+	            </li>
+	            <li class="flex-stretch"></li>
+	        </ul>
+      	</header>
+		<div data-role="main" class="form-page">
+			<div class="overscroll">
+				<form action="" id="add-location-form" data-ajax="false">
+					<div class="form-control">
+						<label for="old-password" class="form-label">Old Password</label>
+						<input type="text" class="form-input" id="profile-name" data-role="none">
+					</div>
+					<div class="form-control">
+						<label for="new-password" class="form-label">New Password</label>
+						<input type="text" class="form-input" id="new-passwrod" data-role="none">
+					</div>
+					<div class="form-control">
+						<label for="confirm-new-password" class="form-label">Confirm New Password</label>
+						<input type="text" class="form-input" id="confirm-new-password" data-role="none">
+					</div>
+					<div class="form-control">
+						<a href="#list-page" class="form-button button-primary">Save changes</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+
+
 
 </body>
 </html>

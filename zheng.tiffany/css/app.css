@@ -206,7 +206,7 @@ code {
 	margin: 0.5rem 0;
 }
 
-.form-input {
+.form-input, .dropdown {
 	display: inline-block;
 	width: 100%;
 	border-width: 0;
@@ -231,47 +231,6 @@ code {
 	outline: 0;
 	text-align: center;
 }
-
-.signin-alt {
-	padding: 1em;
-	text-align: center;
-	font-size: 0.8em;
-	color: var(--color-neutral-dark);
-}
-
-#signin-form, #signup-form {
-	padding: 1em;
-}
-
-#signin-page [data-role="main"] {
-	display: flex;
-	flex-direction: column;
-}
-
-#map-page [data-role='main'] {
-    background-image: url('../images/map-koreatown.png');
-    background-position: center;
-    background-size: cover;
- }
-
- #list-page [data-role='main'] ul {
- 	padding-left: 2em;
- }
-
-  #list-page [data-role='main'] ul li a {
- 	display: flex;
-    padding: 1em 0;
- }
-
-  #list-page [data-role='main'] ul li img {
-  	margin-right: 1em;
-  }
-
-  .overscroll {
-  	width: 100%;
-  	height: 100%;
-  	overflow: auto;
-  }
 
 
 /*  Navigation Buttons */
@@ -299,7 +258,7 @@ a.active-tab {
     color: var(--color-main-medium);
 }
 
-.ui-link:active, .ui-link:visited {
+.ui-link, .ui-link:active, .ui-link:visited {
 	text-decoration: none;
 }
 
@@ -327,7 +286,7 @@ a.active-tab {
 }
 
 .search-bar input {
-	text-align: center;
+	padding-left: 2.5em;
 }
 
 #map-page .ui-header {
@@ -371,11 +330,6 @@ a.active-tab {
 	flex: 1 1 100%;
 	overflow: hidden;
 	position: relative;
-}
-
-#list-page [data-role='main'] ul {
-	margin: 0;
-    padding-left: 1em;
 }
 
 .unyun-location {
@@ -447,11 +401,51 @@ a.active-tab {
 }
 
 
+.signin-alt {
+	padding: 1em;
+	text-align: center;
+	font-size: 0.8em;
+	color: var(--color-neutral-dark);
+}
+
+#signin-form, #signup-form {
+	padding: 1em;
+}
+
+#signin-page [data-role="main"] {
+	display: flex;
+	flex-direction: column;
+}
+
+#map-page [data-role='main'] {
+    background-image: url('../images/map-koreatown.png');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+ }
+
+ .overscroll {
+  	width: 100%;
+  	height: 100%;
+  	overflow: auto;
+}
+
+
 /*Profile Page*/
 
 .profile-info {
-	padding: 1em;
-    padding-top: 0;
+	padding: 0 1em 0.5em;
+}
+
+.profile-info img {
+    border-radius: 50%;
+    max-width: 40%;
+}
+
+.profile-info img {
+	background-image: url(../images/profile-photo-hover.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .profile-header li a img {
@@ -466,7 +460,43 @@ a.active-tab {
 
 #user-profile-page [data-role='main'] hr {
 	width: 90%;
+	margin-bottom: 1em;
 }
+
+.user-location {
+	color: var(--color-neutral-medium);
+    margin: 0.625rem 0;
+}
+
+.profile-stats {
+	padding: 0.25em 1em;
+}
+
+.profile-stats>div>div:first-child {
+	margin-right: 0.5em;
+}
+
+.profile-stats>div>div:last-child {
+	margin-left: 0.5em;
+}
+
+.profile-stat {
+	padding: 2em 1em;
+    background-color: var(--color-main-lighter);
+    border-radius: 0.5em;
+}
+
+.stat-label {
+	padding-bottom: 1em;
+    color: var(--color-neutral-dark);
+    font-weight: bold;
+}
+
+.big-number {
+	font-size: 4em;
+    color: var(--color-main-medium);
+}
+
 
 
 /*Unyun Profile Page*/
@@ -474,7 +504,7 @@ a.active-tab {
 .unyun-profile-photo {
 	width: 100%;
     height: 30%;
-    background-image: url(../images/green-onions-1.jpg);
+    background-image: url(../images/unyun-photos/green-onions-1.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -644,11 +674,86 @@ input.unyun-input-default {
 	text-align: center;
 	border-radius: 2rem;
 	box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-	font-size: 1.5em;
+	font-size: 2em;
+    font-weight: normal;
+    color: var(--color-main-medium-dark);
 }
 
 
+/* Map Page */
 
+.map-pin {
+    position: absolute;
+    width: 32px;
+}
+
+#location-1 {
+    top: 40%;
+    left: 10%;
+}
+
+#location-2 {
+    top: 80%;
+    left: 22%;
+}
+
+#location-3 {
+    top: 10%;
+    left: 18%;
+}
+
+#location-4 {
+    top: 50%;
+    left: 80%;
+}
+
+#location-5 {
+    top: 30%;
+    left: 42%;
+}
+
+#location-6 {
+    top: 60%;
+    left: 44%;
+}
+
+/* Add/Edit Location Page */
+
+.form-page {
+	padding: 0.25em 1em;
+}
+
+
+/* List Page */
+
+#list-page [data-role='main'] ul {
+	margin: 0;
+    padding-left: 1em;
+}
+
+#list-page [data-role='main'] ul li a {
+	display: flex;
+	padding: 1em 0;
+}
+
+.unyun-thumbnail {
+  	margin-right: 1em;
+  	width: 2.5em;
+    height: 2.5em;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#unyun-1 { background-image: url(../images/unyun-photos/green-onions-1.jpg); }
+#unyun-2 { background-image: url(../images/unyun-photos/tomatoes-1.jpg); }
+#unyun-3 { background-image: url(../images/unyun-photos/grapes-1.jpg); }
+#unyun-4 { background-image: url(../images/unyun-photos/garlic-1.jpg); }
+#unyun-5 { background-image: url(../images/unyun-photos/green-onions-2.jpg); }
+#unyun-6 { background-image: url(../images/unyun-photos/plums-1.jpg); }
+#unyun-7 { background-image: url(../images/unyun-photos/eggs-1.jpg); }
+#unyun-8 { background-image: url(../images/unyun-photos/grapes-2.jpg); }
+#unyun-9 { background-image: url(../images/unyun-photos/grapes-3.jpg); }
+#unyun-10 { background-image: url(../images/unyun-photos/tomatoes-2.jpg); }
 
 
 
