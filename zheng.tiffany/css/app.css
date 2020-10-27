@@ -442,12 +442,6 @@ a.active-tab {
     max-width: 40%;
 }
 
-.profile-info img {
-	background-image: url(../images/profile-photo-hover.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-
 .profile-header li a img {
 	padding: 1em;
 }

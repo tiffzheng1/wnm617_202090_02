@@ -81,7 +81,7 @@
 		<header data-role="header">
 			<div class="form-control search-bar">
 				<i class="search-icon"></i>
-		        <input id="search" type="text" class="form-input" data-role="none" placeholder="Search by unyun name or location">
+		        <input id="search" type="search" class="form-input" data-role="none" placeholder="Search by unyun name or location">
 		    </div>
 		</header>
 		<div data-role="main">
@@ -427,8 +427,8 @@
 			<div class="overscroll">
 				<form action="" id="add-location-form" data-ajax="false">
 					<div class="form-control">
-						<label for="unyun-name" class="form-label">Select Unyun</label>
-						<select name="unyun-name" id="unyun-name" data-role="none" class="dropdown">
+						<label for="add-unyun-name" class="form-label">Select Unyun</label>
+						<select name="unyun-name" id="add-unyun-name" data-role="none" class="dropdown">
 							<option class="options" value="option1">Green onions</option>
 							<option class="options" value="option2">Tomatoes</option>
 							<option class="options" value="option3">Eggs</option>
@@ -438,18 +438,18 @@
 						</select>
 					</div>
 					<div class="form-control">
-						<label for="Price" class="form-label">Price</label>
-						<input type="text" class="form-input" id="price" data-role="none" placeholder="i.e. $1.00">
+						<label for="add-price" class="form-label">Price</label>
+						<input type="text" class="form-input" id="add-price" data-role="none" placeholder="i.e. $1.00">
 					</div>
 					<div class="form-control">
-						<label for="location" class="form-label">Location</label>
-						<input type="text" class="form-input" id="location" data-role="none" placeholder="Add location">
+						<label for="add-location" class="form-label">Location</label>
+						<input type="text" class="form-input" id="add-location" data-role="none" placeholder="Add location">
 					</div>
 					<div class="form-control">
 						<label for="quantity" class="form-label">Quantity</label>
 						<div class="display-flex space-between">
 							<div class="flex-stretch margin-right">
-								<select name="quantity" id="quantity"  data-role="none" class="dropdown">
+								<select name="quantity" id="add-quantity"  data-role="none" class="dropdown">
 									<option class="options" value="option1">1</option>
 									<option class="options" value="option2">2</option>
 									<option class="options" value="option3">3</option>
@@ -463,7 +463,7 @@
 								</select>
 							</div>
 							<div class="flex-stretch">
-								<select name="units" id="units"  data-role="none" class="dropdown">
+								<select name="units" id="add-units"  data-role="none" class="dropdown">
 									<option class="options" value="option1">items</option>
 									<option class="options" value="option2">lb</option>
 								</select>
@@ -495,10 +495,10 @@
       	</header>
 		<div data-role="main" class="form-page">
 			<div class="overscroll">
-				<form action="" id="add-location-form" data-ajax="false">
+				<form action="" id="edit-location-form" data-ajax="false">
 					<div class="form-control">
-						<label for="unyun-name" class="form-label">Select Unyun</label>
-						<select name="unyun-name" id="unyun-name" data-role="none" class="dropdown">
+						<label for="edit-unyun-name" class="form-label">Select Unyun</label>
+						<select name="unyun-name" id="edit-unyun-name" data-role="none" class="dropdown">
 							<option class="options" value="option1">Green onions</option>
 							<option class="options" value="option2">Tomatoes</option>
 							<option class="options" value="option3">Eggs</option>
@@ -508,18 +508,18 @@
 						</select>
 					</div>
 					<div class="form-control">
-						<label for="Price" class="form-label">Price</label>
-						<input type="text" class="form-input" id="price" data-role="none" value="$1.29">
+						<label for="edit-price" class="form-label">Price</label>
+						<input type="text" class="form-input" id="edit-price" data-role="none" value="$1.29">
 					</div>
 					<div class="form-control">
-						<label for="location" class="form-label">Location</label>
-						<input type="text" class="form-input" id="location" data-role="none" value="Trader Joe's">
+						<label for="edit-location" class="form-label">Location</label>
+						<input type="text" class="form-input" id="edit-location" data-role="none" value="Trader Joe's">
 					</div>
 					<div class="form-control">
 						<label for="quantity" class="form-label">Quantity</label>
 						<div class="display-flex space-between">
 							<div class="flex-stretch margin-right">
-								<select name="quantity" id="quantity"  data-role="none" class="dropdown">
+								<select name="quantity" id="edit-quantity"  data-role="none" class="dropdown">
 									<option class="options" value="option1">1</option>
 									<option class="options" value="option2">2</option>
 									<option class="options" value="option3">3</option>
@@ -533,7 +533,7 @@
 								</select>
 							</div>
 							<div class="flex-stretch">
-								<select name="units" id="units"  data-role="none" class="dropdown">
+								<select name="units" id="edit-units"  data-role="none" class="dropdown">
 									<option class="options" value="option1">items</option>
 									<option class="options" value="option2">lb</option>
 								</select>
@@ -570,8 +570,8 @@
 						<img src="images/profile-photo-hover.jpg" alt="User profile photo">
 					</div>
 					<div class="form-control">
-						<label for="profile-name" class="form-label">Name</label>
-						<input type="text" class="form-input" id="profile-name" data-role="none" value="Tiffany Zheng">
+						<label for="edit-profile-name" class="form-label">Name</label>
+						<input type="text" class="form-input" id="edit-profile-name" data-role="none" value="Tiffany Zheng">
 					</div>
 					<div class="form-control">
 						<label for="profile-city" class="form-label">City</label>
@@ -607,18 +607,18 @@
       	</header>
 		<div data-role="main" class="form-page">
 			<div class="overscroll">
-				<form action="" id="add-location-form" data-ajax="false">
+				<form action="" id="change-password-form" data-ajax="false">
 					<div class="form-control">
 						<label for="old-password" class="form-label">Old Password</label>
-						<input type="text" class="form-input" id="profile-name" data-role="none">
+						<input type="password" class="form-input" id="old-password" data-role="none">
 					</div>
 					<div class="form-control">
 						<label for="new-password" class="form-label">New Password</label>
-						<input type="text" class="form-input" id="new-passwrod" data-role="none">
+						<input type="password" class="form-input" id="new-passwrod" data-role="none">
 					</div>
 					<div class="form-control">
 						<label for="confirm-new-password" class="form-label">Confirm New Password</label>
-						<input type="text" class="form-input" id="confirm-new-password" data-role="none">
+						<input type="password" class="form-input" id="confirm-new-password" data-role="none">
 					</div>
 					<div class="form-control">
 						<a href="#list-page" class="form-button button-primary">Save changes</a>
