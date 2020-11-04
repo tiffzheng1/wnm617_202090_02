@@ -10,7 +10,7 @@ const makeWarning = (target,message) => {
 
 
 
-const checkSigninForm = () => {
+const checkSigninForm = async() => {
 	let user = $("#signin-username").val();
 	let pass = $("#signin-password").val();
 
@@ -21,11 +21,16 @@ const checkSigninForm = () => {
 		return;
 	}
 
-	if(user == 'user' && pass=='pass') {
+	let found_user = await query({
+		type:'check_signin',
+		params:[user,pass]
+	});
+
+	if(found_user.result.length) {
 		// Log in
 		console.log('success');
 		// Data is kept as long as browser stays open
-		sessionStorage.userId = 3;
+		sessionStorage.userId = found_user.result[0].id;
 		$("#signin-form")[0].reset();
 	} else { 
 		// Don't log in
@@ -39,7 +44,6 @@ const checkSigninForm = () => {
 	// Separation of concerns: allow to do one thing without doing another
 
 	checkUserId();
-
 
 }
 
