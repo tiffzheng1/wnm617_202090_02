@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<title>Unyun App</title>
+
    	<meta charset="UTF-8">
   	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
@@ -10,13 +11,16 @@
 
 	<script src="lib/js/jquery-2.2.4.min.js"></script>
 
+	<script src="js/maps.js"></script>
 	<script src="js/functions.js"></script>
-	<script src="js/parts.js"></script>
 	<script src="js/pages.js"></script>
+	<script src="js/parts.js"></script>
 	<script src="js/signin.js"></script>
 	<script src="js/app.js"></script>
 
 	<script src="lib/js/jquery.mobile-1.4.5.min.js"></script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVFM7EIayr94zjasKDZqZ4HffAi6sEZ9g" defer></script>
 
 </head>
 <body>
@@ -90,7 +94,8 @@
 		    </div>
 		</header>
 		<div data-role="main">
-			<a href="#unyun-profile-page">
+			<div class="map"></div>
+			<!-- <a href="#unyun-profile-page">
 				<img src="images/icons/map-pin-green.svg" class="map-pin" id="location-1">
 			</a>
 			<a href="#unyun-profile-page">
@@ -110,7 +115,7 @@
 			</a>
 			<a class="floater bottom right" href="#add-location-page">
 				<div class="button-circle">&plus;</div>
-			</a>
+			</a> -->
 			<!-- <div class="modal" id="map-add-modal">
             	<div class="modal-back" data-deactivate="#map-add-modal"></div>
 	            <div class="modal-drawer left">
@@ -161,7 +166,9 @@
 		</header>
 		<div data-role="main">
 			<div class="overscroll">
-		        <div class="unyunlist"></div>
+				<ul>
+		        	<div class="unyunlist"></div>
+		        </ul>
 	        </div>
       	</div>
 		<footer data-role="footer">

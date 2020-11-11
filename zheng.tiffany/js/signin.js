@@ -10,7 +10,7 @@ const makeWarning = (target,message) => {
 
 
 
-const checkSigninForm = async() => {
+const checkSigninForm = async () => {
 	let user = $("#signin-username").val();
 	let pass = $("#signin-password").val();
 
@@ -58,7 +58,8 @@ const checkUserId = () => {
 			$.mobile.navigate("#signin-page");
 	} else {
 		// logged in
-		$.mobile.navigate("#map-page");
+		if(p.some(o=>window.location.hash===o))
+			$.mobile.navigate("#map-page");
 	}
 
 }
