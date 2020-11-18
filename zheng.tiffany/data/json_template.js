@@ -10,42 +10,50 @@
     id: '{{index(1)}}',
     unyun_id: '{{integer(1,50)}}',
     
-    lat: '{{floating(33.949550,34.194590 )}}',
-    lng: '{{floating(-118.513225,-118.155117)}}',
-    
+    lat: '{{floating(34.052361,34.069747)}}',
+    lng: '{{floating(-118.309396,-118.290986)}}',
+
+    price: '{{floating(1, 10, 2, "0.00")}}',
+    quantity: '{{integer(1, 10)}}',
+    unit_price: function() {
+      return this.price / this.quantity;
+    },
+
+    location: '{{random("Galleria","H-Mart","California Market","Farmer\'s Market Vendor","Zion Market","Trader Joe\'s")}}',
     description: '{{lorem(3, "sentences")}}',
+
+    photo: function(tags) {
+      return './images/locations/' + this.location + '.jpg';
+    },
+
+    icon: './images/icons/map-pin-green.svg',
     
-    photo: 'https://via.placeholder.com/400/',
-    icon: 'https://via.placeholder.com/100/?text=ICON',
-    
-    date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
+    date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd")}}'
   }
 ]
 
 // Unyun Template
 
 [
-  '{{repeat(10)}}',
+  '{{repeat(50)}}',
   {
     id: '{{index(1)}}',
     user_id: '{{integer(1,10)}}',
-    category: '{{random("fruits","vegetables","pantry")}}',
+    category: '{{random("Fruits","Vegetables","Pantry")}}',
     type: function(tags) {
       var types = {
-        "fruits":["grapes","plums","tangerines","strawberries"],
-        "vegetables":["green onions","broccoli","eggplant","caulifower"],
-        "pantry":["jasmine rice","spam","chicken stock"]
+        "Fruits":["Grapes","Plums","Tangerines","Strawberries"],
+        "Vegetables":["Green Onions","Broccoli","Tomatoes","Cauliflower"],
+        "Pantry":["Garlic","Jasmine Rice","Eggs","Chicken Stock"]
       };
       var chosen_type = types[this.category];
       var chosen_index = tags.integer(0,chosen_type.length-1);
       return chosen_type[chosen_index];
     },
-    
-    description: '{{lorem(3, "sentences")}}',
     img: function(tags) {
-      return 'https://via.placeholder.com/400/' + tags.integer(700,999) + '/fff/?text=' + this.type;
+      return './images/unyun-photos/' + this.type + '.jpg';
       },
-    date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
+    date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd")}}'
   }
 ]
 
@@ -64,11 +72,11 @@
       },
     password: 'md5(pass)',
     img: function(tags) {
-      return 'https://via.placeholder.com/400/' + tags.integer(700,999) + '/fff/?text=' + this.username;
+      return './images/users/' + this.username + '.jpg';
       },
     phone: '+1 {{phone()}}',
     gender: '{{gender()}}',
-    date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd hh:mm:ss")}}'
+    date_create: '{{date(new Date(2020, 0, 1), new Date(), "YYYY-MM-dd")}}'
   }
 ]
 

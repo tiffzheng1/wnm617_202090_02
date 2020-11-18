@@ -4,7 +4,7 @@ const makeUnyunList = templater(o=>`
 <li>
 	<a href="#unyun-profile-page">
 		<div class="unyun-thumbnail">
-			<img src="${o.img}" alt="">
+			<img src="${o.img}" alt="${o.type}">
 		</div>
 		<div class="unyun-info flex-stretch">
 			<div class="unyun-type">${o.type}</div>
@@ -20,7 +20,7 @@ const makeUserProfile = templater(o=>`
 <div class="profile-info">
 	<img src="${o.img}" alt="User profile photo">
 	<div class="user-name">${o.name}</div>
-	<div class="user-location">${o.location}</div>
+	<div class="user-email">${o.email}</div>
 </div>
 <hr>
 <div class="profile-stats">
@@ -61,3 +61,15 @@ const makeUnyunProfile = templater(o=>`
 	</div>
 </div>
 `);
+
+const makeUnyunPopup = o=>`
+<div class="display-flex">
+	<div class="unyun-thumbnail">
+	   <img src="${o.img}" alt="${o.type}">
+	</div>
+	<div>
+	   <div class="unyun-type">${o.type}</div>
+	   <div class="unyun-category">${o.category}</div>
+	</div>
+</div>
+`;

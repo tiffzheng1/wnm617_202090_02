@@ -20,6 +20,20 @@ const MapPage = async() => {
    //console.log(map_el.data('map'))
 
    makeMarkers(map_el,valid_unyuns);
+
+   map_el.data("markers").forEach((o,i)=>{
+   	o.addListener("click",function(){
+   		// Go to Unyun Profile Page
+   		// sessionStorage.unyunId = valid_unyuns[i].unyun_id;
+   		// $.mobile.navigate("#unyun-profile-page");
+
+   		// InfoWindow
+   		map_el.data("infoWindow")
+   			.open(map_el.data("map"),o);
+   		map_el.data("infoWindow")
+   			.setContent(makeUnyunPopup(valid_unyuns[i]));
+   	})
+   })
 }
 
 //async and await

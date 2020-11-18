@@ -457,7 +457,7 @@ a.active-tab {
 	margin-bottom: 1em;
 }
 
-.user-location {
+.user-location, .user-email {
 	color: var(--color-neutral-medium);
     margin: 0.625rem 0;
 }
@@ -742,8 +742,11 @@ input.unyun-input-default {
   	margin-right: 1em;
   	width: 2.5em;
     height: 2.5em;
-    background-repeat: no-repeat;
-    background-size: cover;
+}
+
+.unyun-thumbnail img {
+	width: 100%;
+	height: auto;
 }
 
 #unyun-1 { background-image: url(../images/unyun-photos/green-onions-1.jpg); }
