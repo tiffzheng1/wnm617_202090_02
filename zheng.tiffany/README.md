@@ -2,11 +2,11 @@
 
 ## Important Links
 
-- http://tzheng8.com
-- http://tzheng8.com/aau/wnm617/zheng.tiffany
-- http://tzheng8.com/aau/wnm617/zheng.tiffany/Zheng_m03_Explorations.pdf
+- https://tzheng8.com
+- https://tzheng8.com/aau/wnm617/zheng.tiffany
+- https://tzheng8.com/aau/wnm617/zheng.tiffany/Zheng_m03_Explorations.pdf
 
 ## Demos
 
-- http://tzheng8.com/aau/wnm617/zheng.tiffany/zengarden
-- http://tzheng8.com/aau/wnm617/zheng.tiffany/demo/jquery.html
+- https://tzheng8.com/aau/wnm617/zheng.tiffany/zengarden
+- https://tzheng8.com/aau/wnm617/zheng.tiffany/demo/jquery.html
