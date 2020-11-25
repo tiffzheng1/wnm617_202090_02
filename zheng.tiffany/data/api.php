@@ -89,9 +89,66 @@ function makeStatement ($data) {
             GROUP BY l.unyun_id
             ",$p);
 
-		default: return ["error"=>"No Matched type"];
-	}
+
+
+
+// CRUD
+
+   // USERS
+
+      // CREATE USER
+
+      case "insert_user":
+         $r = makeQuery($c,"SELECT * FROM `track_users` WHERE `username` = ? OR `email` = ?",[$p[0],$p[1]]);
+         if(count($r['result'])) return ['error'=>"Username or Email already exists"];
+
+         $r = makeQuery($c,"INSERT INTO
+            `track_users`
+            (`name`,`username`,`email`,`password`,`img`,`phone`,`gender`,`date_create`)
+            VALUES
+            (' ', ?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', ' ', ' ', NOW())
+            ",$p,false);
+         return ["id"=>$c->lastInsertId()];
+
+      // UPDATE USER
+
+      case "update_user":
+         $r = makeQuery($c,"UPDATE
+            `track_users`
+            SET
+               `username` = ?,
+               `name` = ?,
+               `email` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];
+
+   // UNYUNS
+
+      // CREATE UNYUN
+
+      // UPDATE UNYUN
+
+      // DELETE UNYUN
+
+      case "delete_unyun":
+         return makeQuery($c,"DELETE FROM `track_unyuns` WHERE `id` = ?",$p,false);
+
+   // LOCATIONS
+
+      // CREATE LOCATION
+
+      // UPDATE LOCATION
+
+      // DELETE LOCATION
+
+      case "delete_location":
+         return makeQuery($c,"DELETE FROM `track_locations` WHERE `id` = ?",$p,false);
+
+      default: return ["error"=>"No Matched type"];
+   }
 }
+
 
 
 $data = json_decode(file_get_contents("php://input"));

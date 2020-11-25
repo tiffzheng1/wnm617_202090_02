@@ -13,6 +13,7 @@
 
 	<script src="js/maps.js"></script>
 	<script src="js/functions.js"></script>
+	<script src="js/forms.js"></script>
 	<script src="js/pages.js"></script>
 	<script src="js/parts.js"></script>
 	<script src="js/signin.js"></script>
@@ -36,11 +37,15 @@
 					<input id="signin-username" type="" class="form-input" data-role="none" placeholder="Type your username">
 				</div>
 				<div class="form-control">
+					<label for="signin-email" class="form-label">Email</label>
+					<input id="signin-email" type="email" class="form-input" data-role="none" placeholder="Type your email">
+				</div>
+				<div class="form-control">
 					<label for="signin-password" class="form-label">Password</label>
 					<input id="signin-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
 				</div>
 				<div class="form-control">
-					<input type="submit" value="Sign in" class="form-button button-primary" data-role="none">
+					<input type="submit" class="form-button button-primary" value="Sign in" data-role="none">
 				</div>
 				<div class="form-control signin-alt">
 					Don't have an account?
@@ -68,6 +73,10 @@
 					<input id="signup-username" type="" class="form-input" data-role="none" placeholder="Type your username">
 				</div>
 				<div class="form-control">
+					<label for="signup-email" class="form-label">Email</label>
+					<input id="signup-email" type="email" class="form-input" data-role="none" placeholder="Type your email">
+				</div>
+				<div class="form-control">
 					<label for="signup-password" class="form-label">Password</label>
 					<input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
 				</div>
@@ -76,7 +85,7 @@
 					<input id="signup-password-confirm" type="password" class="form-input" data-role="none" placeholder="Confirm your password">
 				</div>
 				<div class="form-control">
-					<a href="#map-page" class="form-button button-primary">Sign up</a>
+					<input type="submit" class="form-button button-primary" value="Sign up" data-role="none">
 				</div>
 				<div class="form-control signin-alt">
 					Already have an account?
@@ -477,7 +486,7 @@
 					</div>
 					<div class="form-control">
 						<label for="profile-email-address" class="form-label">Email address</label>
-						<input type="text" class="form-input" id="profile-email-address" data-role="none" value="tiffzheng@gmail.com">
+						<input type="email" class="form-input" id="profile-email-address" data-role="none" value="tiffzheng@gmail.com">
 					</div>
 					<div class="form-control">
 						<a href="#list-page" class="form-button button-primary">Save changes</a>

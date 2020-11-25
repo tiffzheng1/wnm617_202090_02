@@ -58,8 +58,33 @@ const checkUserId = () => {
 			$.mobile.navigate("#signin-page");
 	} else {
 		// logged in
-		if(p.some(o=>window.location.hash===o))
-			$.mobile.navigate("#map-page");
-	}
-
+	      if(p.some(o=>window.location.hash===o)) {
+	         query({type:'unyuns_by_user_id',params:[sessionStorage.userId]})
+	         .then(d=>{
+	            if(d.result.length) $.mobile.navigate("#map-page");
+	             else $.mobile.navigate("#list-page");
+         })
+      }
+   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

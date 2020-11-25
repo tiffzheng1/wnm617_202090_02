@@ -30,6 +30,10 @@ $(()=>{
 		e.preventDefault();
 		checkSigninForm();
 	})
+	.on("submit","#signup-form",function(e){
+      e.preventDefault();
+      checkSignupForm();
+   })
 
 	// Anchor Clicks
 

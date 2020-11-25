@@ -46,8 +46,9 @@ const ListPage = async() => {
 	console.log(d)
 
 	$("#list-page .unyunlist")
-		.html(makeUnyunList(d.result));
+		.html(d.result.length?makeAnimalList(d.result):'Start your Unyun list by tapping on the + icon in the top right!');
 }
+
 
 const UserProfilePage = async() => {
 	let d = await query({
