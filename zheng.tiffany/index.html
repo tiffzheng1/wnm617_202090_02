@@ -4,6 +4,13 @@
 	<title>Unyun App</title>
 
    	<meta charset="UTF-8">
+
+   	<meta name="apple-mobile-web-app-capable" content="yes">
+   	<meta name="mobile-web-app-capable" content="yes">
+
+   	<link rel="apple-touch-icon" href="./app_icon.png">
+   	<link rel="icon" href="./app_icon.png">
+
   	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
    	<link rel="stylesheet" href="lib/css/jquery.mobile.structure-1.4.5.min.css">
@@ -104,38 +111,6 @@
 		</header>
 		<div data-role="main">
 			<div class="map"></div>
-			<!-- <a href="#unyun-profile-page">
-				<img src="images/icons/map-pin-green.svg" class="map-pin" id="location-1">
-			</a>
-			<a href="#unyun-profile-page">
-				<img src="images/icons/map-pin-green.svg" class="map-pin" id="location-2">
-			</a>
-			<a href="#unyun-profile-page">
-				<img src="images/icons/map-pin-green.svg" class="map-pin" id="location-3">
-			</a>
-			<a href="#unyun-profile-page">
-				<img src="images/icons/map-pin-green.svg" class="map-pin" id="location-4">
-			</a>
-			<a href="#unyun-profile-page">
-				<img src="images/icons/map-pin-green.svg" class="map-pin" id="location-5">
-			</a>
-			<a href="#unyun-profile-page">
-				<img src="images/icons/map-pin-green.svg" class="map-pin" id="location-6">
-			</a>
-			<a class="floater bottom right" href="#add-location-page">
-				<div class="button-circle">&plus;</div>
-			</a> -->
-			<!-- <div class="modal" id="map-add-modal">
-            	<div class="modal-back" data-deactivate="#map-add-modal"></div>
-	            <div class="modal-drawer left">
-	               <div class="modal-body">
-		               	<ul>
-		               		<li><a href="#">New Unyun to Track</a></li>
-		               		<li><a href="#">Location of an Unyun</a></li>
-		               	</ul>
-	            	</div>
-	            </div>
-         	</div> -->
 		</div>
 		<footer data-role="footer">
 			<ul>
@@ -163,22 +138,30 @@
 
 	<section data-role="page" id="list-page">
 		<header data-role="header">
-			<h1>Your Unyuns</h1>
 			<ul>
-				<li class="flex-stretch"></li>
-				<li>
-					<a href="#" data-activate="#list-add-modal">
-						<img src="images/icons/plus-gray.svg" alt="Plus icon">
-					</a>
+				<li class="flex-stretch list-search">
+					<form class="hotdog" id="list-search-form" data-ajax="false">
+						<i class="search-icon"></i>
+                  		<input type="search" id="list-search-input" data-role="none" placeholder="Search by unyun name">
+               		</form>
 				</li>
 			</ul>
 		</header>
+
+		<header data-role="header">
+			<div class="filter-row"></div>
+		</header>
+
+
 		<div data-role="main">
 			<div class="overscroll">
 				<ul>
 		        	<div class="unyunlist"></div>
 		        </ul>
 	        </div>
+	        <div class="floater right bottom">
+            	<a href="#unyun-add-page" class="btn-circle">&plus;</a>
+         	</div>
       	</div>
 		<footer data-role="footer">
 			<ul>
@@ -264,6 +247,27 @@
 			</ul>
 		</footer>
 	</section>
+
+
+	<section data-role="page" id="user-upload-page">
+      <header data-role="header">
+         <h1>Choose Image</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-user-upload">Save</a></li>
+         </ul>
+      </header>
+      <<div data-role="main">
+         <form id="user-upload-form" data-ajax="false">
+            <input type="hidden" id="user-upload-image">
+            <label class="image-uploader full">
+               <input type="file" data-role="none" id="user-upload-input">
+            </label>
+         </form>
+      </div>
+   </section>
+
 
 	<section data-role="page" id="unyun-profile-page">
 		<header data-role="header">

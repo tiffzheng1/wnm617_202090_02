@@ -1,4 +1,13 @@
 
+const drawUnyunList = (a,empty_phrase='Start your Unyun list by tapping on the + icon!') => {
+   $("#list-page .unyunlist")
+   		.html(a.length?makeUnyunList(a):empty_phrase);
+}
+
+
+
+
+
 
 const makeUnyunList = templater(o=>`
 <li>
@@ -73,3 +82,38 @@ const makeUnyunPopup = o=>`
 	</div>
 </div>
 `;
+
+
+
+const filterRow = (unyuns,category) => {
+	let a = [...(new Set(unyuns.map(o=>o[category])))];
+	return templater(o=>`<div class="filter" data-field="${category}" data-value="${o}">${o[0].toUpperCase()+o.substr(1)}</div>`)(a);
+}
+
+const makeFilterRow = (unyuns) => {
+   return `
+   <div class="filter" data-field="category" data-value="all">All</div> | 
+   ${filterRow(unyuns,'category')}
+   `;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

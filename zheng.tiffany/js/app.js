@@ -34,6 +34,10 @@ $(()=>{
       e.preventDefault();
       checkSignupForm();
    })
+	.on("submit","#list-search-form",function(e){
+      e.preventDefault();
+      checkSearchForm();
+   })
 
 	// Anchor Clicks
 
@@ -46,6 +50,32 @@ $(()=>{
       sessionStorage.unyunId = $(this).data("id");
       $.mobile.navigate("#unyun-profile-page");
     })
+
+
+    .on("click",".js-user-upload",function(e){
+      checkUserUpload();
+    })
+
+
+
+
+	.on("click",".filter",function(e){
+      checkFilterRow($(this).data());
+    })
+	.on("change",".image-uploader input",function(e){
+      checkUpload(this.files[0])
+      .then(d=>{
+         console.log(d)
+         $("#user-upload-image").val('uploads/'+d.result);
+         $("#user-upload-page .image-uploader")
+            .css({'background-image':`url('uploads/${d.result}')`})
+      })
+    })
+
+
+
+
+
 
 
 	.on("click","[data-activate]",function(){
