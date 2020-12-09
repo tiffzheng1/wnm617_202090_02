@@ -9,7 +9,7 @@
    	<meta name="mobile-web-app-capable" content="yes">
 
    	<link rel="apple-touch-icon" href="./app_icon.png">
-   	<link rel="icon" href="./app_icon.png">
+   	<link rel="icon" href="./site_icon.png">
 
   	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
@@ -33,23 +33,21 @@
 </head>
 <body>
 
+	<!-- Signin and Signup -->
+
 	<section data-role="page" id="signin-page">
 		<div data-role="main" class="display-flex flex-column">
 			<div class="flex-stretch display-flex align-center justify-center">
-				<img src="images/icons/unyun-logo.svg" style="width:80vw;height:80vw;" alt="Unyun Logo">
+				<img src="images/icons/unyun-logo.svg" style="width:70vw" alt="Unyun Logo">
 			</div>
 			<form id="signin-form" data-ajax="false">
 				<div class="form-control">
 					<label for="signin-username" class="form-label">Username</label>
-					<input id="signin-username" type="" class="form-input" data-role="none" placeholder="Type your username">
-				</div>
-				<div class="form-control">
-					<label for="signin-email" class="form-label">Email</label>
-					<input id="signin-email" type="email" class="form-input" data-role="none" placeholder="Type your email">
+					<input id="signin-username" type="" class="form-input" data-role="none" placeholder="Enter your username">
 				</div>
 				<div class="form-control">
 					<label for="signin-password" class="form-label">Password</label>
-					<input id="signin-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
+					<input id="signin-password" type="password" class="form-input" data-role="none" placeholder="Enter your password">
 				</div>
 				<div class="form-control">
 					<input type="submit" class="form-button button-primary" value="Sign in" data-role="none">
@@ -60,32 +58,30 @@
 				</div>
 			</form>
 		</div>
-
 		<div class="modal" id="signin-warning-modal">
 			<div class="modal-toast top" data-deactivate="#signin-warning-modal">
 				<div class="message">Message</div>
 			</div>
 		</div>
-
 	</section>
 
 	<section data-role="page" id="signup-page">
 		<div data-role="main">
 			<div class="flex-stretch display-flex align-center justify-center margin-top">
-				<img src="images/icons/unyun-logo.svg" style="width:76vw;height:76vw;" alt="Unyun Logo">
+				<img class="margin-top" src="images/icons/unyun-logo.svg" style="width:50vw" alt="Unyun Logo">
 			</div>
 			<form id="signup-form" data-ajax="false">
 				<div class="form-control">
 					<label for="signup-username" class="form-label">Username</label>
-					<input id="signup-username" type="" class="form-input" data-role="none" placeholder="Type your username">
+					<input id="signup-username" type="" class="form-input" data-role="none" placeholder="Create a username">
 				</div>
 				<div class="form-control">
 					<label for="signup-email" class="form-label">Email</label>
-					<input id="signup-email" type="email" class="form-input" data-role="none" placeholder="Type your email">
+					<input id="signup-email" type="email" class="form-input" data-role="none" placeholder="Enter your email address">
 				</div>
 				<div class="form-control">
 					<label for="signup-password" class="form-label">Password</label>
-					<input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Type your password">
+					<input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Enter your password">
 				</div>
 				<div class="form-control">
 					<label for="signup-password-confirm" class="form-label">Confirm Password</label>
@@ -101,6 +97,8 @@
 			</form>
 		</div>
 	</section>
+
+	<!-- Main Nav Pages -->
 
 	<section data-role="page" id="map-page">
 		<header data-role="header">
@@ -147,12 +145,9 @@
 				</li>
 			</ul>
 		</header>
-
 		<header data-role="header">
 			<div class="filter-row"></div>
 		</header>
-
-
 		<div data-role="main">
 			<div class="overscroll">
 				<ul>
@@ -185,7 +180,7 @@
 				</li>
 			</ul>
 		</footer>
-		<div class="modal" id="list-add-modal">
+		<!-- <div class="modal" id="list-add-modal">
 			<div class="modal-back" data-deactivate="#list-add-modal"></div>
 			<form id="form" data-ajax="false" class="modal-popup">
 				<div class="modal-head">Add New Unyun to Track</div>
@@ -199,7 +194,7 @@
 					<input class="form-button button-primary" type="submit" value="Save" data-role="none">
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</section>
 
 	<section data-role="page" id="user-profile-page">
@@ -248,75 +243,7 @@
 		</footer>
 	</section>
 
-
-	<section data-role="page" id="user-upload-page">
-      <header data-role="header">
-         <h1>Choose Image</h1>
-         <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-            <li class="flex-stretch"></li>
-            <li><a href="#" class="js-user-upload">Save</a></li>
-         </ul>
-      </header>
-      <<div data-role="main">
-         <form id="user-upload-form" data-ajax="false">
-            <input type="hidden" id="user-upload-image">
-            <label class="image-uploader full">
-               <input type="file" data-role="none" id="user-upload-input">
-            </label>
-         </form>
-      </div>
-   </section>
-
-
-	<section data-role="page" id="unyun-profile-page">
-		<header data-role="header">
-	         <h1>Unyun</h1>
-	         <ul>
-	            <li>
-	            	<a href="#" data-rel="back">
-	            		<img src="images/icons/arrow-left-gray.svg" alt="Back icon">
-	            	</a>
-	            </li>
-	            <li class="flex-stretch"></li>
-	            <li>
-					<a href="#" data-toggle="#unyun-add-modal">
-						<img src="images/icons/more-vertical-gray.svg" alt="More options icon">
-					</a>
-				</li>
-	         </ul>
-      	</header>
-      	<div data-role="main">
-        	<div class="modal" id="unyun-add-modal">
-	            <div class="modal-back" data-toggle="#unyun-add-modal"></div>
-		        <div class="modal-drawer left">
-		            <div class="modal-body">
-		             	<p><a href="#edit-location-page" class="js-logout">Edit Location</a></p>
-		             	<p><a href="#" class="js-logout">Delete Location</a></p>
-		            </div>
-		        </div>
-        	</div>
-        	<div class="unyun-profile-photo"></div>
-	        <div class="unyun-profile-info">
-	        	<div class="form-control">
-					<label for="unyun-profile-location" class="form-label">Location</label>
-					<input id="unyun-profile-location" type="" class="unyun-input-default" data-role="none" value="Trader Joe's">
-				</div>
-				<div class="form-control">
-					<label for="unyun-profile-price" class="form-label">Price</label>
-					<input id="unyun-profile-price" type="" class="unyun-input-default" data-role="none" value="$1.29">
-				</div>
-				<div class="form-control">
-					<label for="unyun-profile-quantity" class="form-label">Quantity</label>
-					<input id="unyun-profile-quantity" type="" class="unyun-input-default" data-role="none" value="1">
-				</div>
-				<div class="form-control">
-					<label for="unyun-profile-unit-price" class="form-label">Units</label>
-					<input id="unyun-profile-unit-price" type="" class="unyun-input-default" data-role="none" value="item">
-				</div>
-	        </div>
-      	</div>
-	</section>
+	<!-- Location CRUD Pages -->
 
 	<section data-role="page" id="add-location-page">
 		<header data-role="header">
@@ -458,7 +385,60 @@
 		</div>
 	</section>
 
-	<section data-role="page" id="edit-profile-page">
+	<!-- Unyun CRUD Pages -->
+
+	<section data-role="page" id="unyun-profile-page">
+		<header data-role="header">
+	         <h1>Unyun</h1>
+	         <ul>
+	            <li>
+	            	<a href="#" data-rel="back">
+	            		<img src="images/icons/arrow-left-gray.svg" alt="Back icon">
+	            	</a>
+	            </li>
+	            <li class="flex-stretch"></li>
+	            <li>
+					<a href="#" data-toggle="#unyun-add-modal">
+						<img src="images/icons/more-vertical-gray.svg" alt="More options icon">
+					</a>
+				</li>
+	         </ul>
+      	</header>
+      	<div data-role="main">
+        	<div class="modal" id="unyun-add-modal">
+	            <div class="modal-back" data-toggle="#unyun-add-modal"></div>
+		        <div class="modal-drawer left">
+		            <div class="modal-body">
+		             	<p><a href="#edit-location-page" class="js-logout">Edit Location</a></p>
+		             	<p><a href="#" class="js-logout">Delete Location</a></p>
+		            </div>
+		        </div>
+        	</div>
+        	<div class="unyun-profile-photo"></div>
+	        <div class="unyun-profile-info">
+	        	<div class="form-control">
+					<label for="unyun-profile-location" class="form-label">Location</label>
+					<input id="unyun-profile-location" type="" class="unyun-input-default" data-role="none" value="Trader Joe's">
+				</div>
+				<div class="form-control">
+					<label for="unyun-profile-price" class="form-label">Price</label>
+					<input id="unyun-profile-price" type="" class="unyun-input-default" data-role="none" value="$1.29">
+				</div>
+				<div class="form-control">
+					<label for="unyun-profile-quantity" class="form-label">Quantity</label>
+					<input id="unyun-profile-quantity" type="" class="unyun-input-default" data-role="none" value="1">
+				</div>
+				<div class="form-control">
+					<label for="unyun-profile-unit-price" class="form-label">Units</label>
+					<input id="unyun-profile-unit-price" type="" class="unyun-input-default" data-role="none" value="item">
+				</div>
+	        </div>
+      	</div>
+	</section>
+
+	<!-- User CRUD Pages -->
+
+	<section data-role="page" id="edit-user-page">
 		<header data-role="header">
 	        <h1>Edit Profile</h1>
 	        <ul>
@@ -472,7 +452,7 @@
       	</header>
 		<div data-role="main" class="form-page">
 			<div class="overscroll">
-				<form action="" id="add-location-form" data-ajax="false">
+				<form action="" id="edit-profile-form" data-ajax="false">
 					<div class="profile-info center margin-top">
 						<img src="images/profile-photo-hover.jpg" alt="User profile photo">
 					</div>
@@ -500,7 +480,26 @@
 		</div>
 	</section>
 
-	<section data-role="page" id="change-password-page">
+	<section data-role="page" id="user-upload-page">
+      <header data-role="header">
+         <h1>Choose Image</h1>
+         <ul>
+            <li><a href="#" data-rel="back">Back</a></li>
+            <li class="flex-stretch"></li>
+            <li><a href="#" class="js-user-upload">Save</a></li>
+         </ul>
+      </header>
+      <<div data-role="main">
+         <form id="user-upload-form" data-ajax="false">
+            <input type="hidden" id="user-upload-image">
+            <label class="image-uploader full">
+               <input type="file" data-role="none" id="user-upload-input">
+            </label>
+         </form>
+      </div>
+    </section>
+
+    <section data-role="page" id="change-password-page">
 		<header data-role="header">
 	        <h1>Change Password</h1>
 	        <ul>
@@ -534,7 +533,6 @@
 			</div>
 		</div>
 	</section>
-
 
 
 </body>
