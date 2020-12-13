@@ -119,7 +119,7 @@ function makeStatement ($data) {
          return makeQuery($c,"SELECT * FROM `track_unyuns` un 
             LEFT JOIN `track_locations` l 
             ON un.id = l.unyun_id
-            left join `track_users` u on u.id = un.user_id
+            LEFT JOIN `track_users` u on u.id = un.user_id
             WHERE `user_id` = ?
             ",$p);
 
