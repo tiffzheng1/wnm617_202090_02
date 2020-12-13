@@ -84,6 +84,15 @@ const makeUnyunPopup = o=>`
 </a>
 `;
 
+const makeLocationPopup = o=>`
+<a href="#" class="js-location-jump" data-id="${o.unyun_id}">
+   <div>
+      <div class="unyun-type">${o.price}</div>
+      <div class="unyun-category">${o.quantity}</div>
+   </div>
+</a>
+`;
+
 
 
 

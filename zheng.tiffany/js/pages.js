@@ -109,18 +109,37 @@ const UnyunProfilePage = async() => {
 
       $("#unyun-profile-page .unyun-top")
          .html(makeUnyunProfile(d.result));
-   })
+   });
 
    query({
       type:'locations_by_unyun_id',
       params:[sessionStorage.unyunId]
    }).then(d=>{
+      
+      let valid_locations = d.result.reduce((r,o)=>{
+         if(o.lat && o.lng) r.push(o);
+         return r;
+      },[])
+
       makeMap("#unyun-profile-page .map").then(map_el=>{
          makeMarkers(map_el,d.result);
+
+         map_el.data("markers").forEach((o,i)=>{
+            o.addListener("click", function(){
+               // console.log("click")
+
+               map_el.data("infoWindow")
+                  .open(map_el.data("map"),o);
+               map_el.data("infoWindow")
+                  .setContent(makeLocationPopup(valid_locations[i]));
+            })
+         })
+
       })
    }) 
 
 }
+
 
 const UnyunAddPage = async() => {
    query({
