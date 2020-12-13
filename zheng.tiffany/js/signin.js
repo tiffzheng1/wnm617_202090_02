@@ -49,7 +49,7 @@ const checkSigninForm = async () => {
 
 
 const checkUserId = () => {
-	let p = ['#onboarding-page-1','#onboarding-page-2','#signin-page','#signup-page','']
+	let p = ['#signin-page','#signup-page','']
 
 	if(sessionStorage.userId === undefined) {
 		// not logged in

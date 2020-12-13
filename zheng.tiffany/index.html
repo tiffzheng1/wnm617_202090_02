@@ -18,9 +18,9 @@
 
 	<script src="lib/js/jquery-2.2.4.min.js"></script>
 
-	<script src="js/maps.js"></script>
 	<script src="js/functions.js"></script>
 	<script src="js/forms.js"></script>
+	<script src="js/maps.js"></script>
 	<script src="js/pages.js"></script>
 	<script src="js/parts.js"></script>
 	<script src="js/signin.js"></script>
@@ -81,7 +81,7 @@
 				</div>
 				<div class="form-control">
 					<label for="signup-password" class="form-label">Password</label>
-					<input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Enter your password">
+					<input id="signup-password" type="password" class="form-input" data-role="none" placeholder="Create a password">
 				</div>
 				<div class="form-control">
 					<label for="signup-password-confirm" class="form-label">Confirm Password</label>
@@ -100,28 +100,43 @@
 
 	<!-- Main Nav Pages -->
 
-	<section data-role="page" id="map-page">
-		<header data-role="header">
-			<div class="form-control search-bar">
-				<i class="search-icon"></i>
-		        <input id="search" type="search" class="form-input" data-role="none" placeholder="Search by unyun name or location">
-		    </div>
+	<section data-role="page" id="list-page">
+		<header data-role="header" class="list-page-header">
+			<div class="wordmark">
+				<img src="images/icons/unyun-wordmark.svg" alt="Unyun">
+			</div>
+			<div class="flex-stretch list-search">
+				<form class="hotdog" id="list-search-form" data-ajax="false">
+					<i class="search-icon"></i>
+              		<input type="search" id="list-search-input" data-role="none" placeholder="Search Unyuns">
+           		</form>
+			</div>
+		</header>
+		<header data-role="header" class="list-page-filters">
+			<div class="filter-row"></div>
 		</header>
 		<div data-role="main">
-			<div class="map"></div>
-		</div>
+			<div class="overscroll">
+				<ul>
+		        	<div class="unyunlist"></div>
+		        </ul>
+	        </div>
+	        <div class="floater right bottom">
+            	<a href="#unyun-add-page" class="button-circle">&plus;</a>
+         	</div>
+      	</div>
 		<footer data-role="footer">
 			<ul>
 				<li>
-					<a href="#map-page" class="active-tab">
-						<img class="nav-icon" src="images/icons/map-green.svg" alt="Map icon">
-						<div class="nav-label">Map</div>
+					<a href="#list-page" class="active-tab">
+						<img class="nav-icon" src="images/icons/list-green.svg" alt="List icon">
+						<div class="nav-label">List</div>
 					</a>
 				</li>
 				<li>
-					<a href="#list-page">
-						<img class="nav-icon" src="images/icons/list-gray.svg" alt="List icon">
-						<div class="nav-label">List</div>
+					<a href="#map-page">
+						<img class="nav-icon" src="images/icons/map-gray.svg" alt="Map icon">
+						<div class="nav-label">Map</div>
 					</a>
 				</li>
 				<li>
@@ -134,42 +149,22 @@
 		</footer>
 	</section>
 
-	<section data-role="page" id="list-page">
-		<header data-role="header">
-			<ul>
-				<li class="flex-stretch list-search">
-					<form class="hotdog" id="list-search-form" data-ajax="false">
-						<i class="search-icon"></i>
-                  		<input type="search" id="list-search-input" data-role="none" placeholder="Search by unyun name">
-               		</form>
-				</li>
-			</ul>
-		</header>
-		<header data-role="header">
-			<div class="filter-row"></div>
-		</header>
+	<section data-role="page" id="map-page">
 		<div data-role="main">
-			<div class="overscroll">
-				<ul>
-		        	<div class="unyunlist"></div>
-		        </ul>
-	        </div>
-	        <div class="floater right bottom">
-            	<a href="#unyun-add-page" class="btn-circle">&plus;</a>
-         	</div>
-      	</div>
+			<div class="map"></div>
+		</div>
 		<footer data-role="footer">
 			<ul>
 				<li>
-					<a href="#map-page">
-						<img class="nav-icon" src="images/icons/map-gray.svg" alt="Map icon">
-						<div class="nav-label">Map</div>
+					<a href="#list-page">
+						<img class="nav-icon" src="images/icons/list-gray.svg" alt="List icon">
+						<div class="nav-label">List</div>
 					</a>
 				</li>
 				<li>
-					<a href="#list-page" class="active-tab">
-						<img class="nav-icon" src="images/icons/list-green.svg" alt="List icon">
-						<div class="nav-label">List</div>
+					<a href="#map-page" class="active-tab">
+						<img class="nav-icon" src="images/icons/map-green.svg" alt="Map icon">
+						<div class="nav-label">Map</div>
 					</a>
 				</li>
 				<li>
@@ -180,21 +175,6 @@
 				</li>
 			</ul>
 		</footer>
-		<!-- <div class="modal" id="list-add-modal">
-			<div class="modal-back" data-deactivate="#list-add-modal"></div>
-			<form id="form" data-ajax="false" class="modal-popup">
-				<div class="modal-head">Add New Unyun to Track</div>
-				<div class="modal-body">
-					<div class="form-control">
-		                <label for="list-add-unyun" class="form-label">Unyun Name</label>
-		                <input id="list-add-unyun" type="text" class="form-input" data-role="none" placeholder="Enter Unyun name">
-		            </div>
-				</div>
-				<div class="modal-foot">
-					<input class="form-button button-primary" type="submit" value="Save" data-role="none">
-				</div>
-			</div>
-		</div> -->
 	</section>
 
 	<section data-role="page" id="user-profile-page">
@@ -211,9 +191,9 @@
 				<div class="modal-back" data-toggle="#profile-add-modal"></div>
 			    <div class="modal-drawer left">
 			     	<div class="modal-body">
-			     		<p><a href="#edit-profile-page">Edit Profile</a></p>
-			     		<p><a href="#change-password-page">Change Password</a></p>
-			     		<p><a href="#" class="js-logout">Logout</a></p>
+			     		<p><a href="#user-edit-page" data-deactivate="#profile-add-modal">Edit Profile</a></p>
+			     		<p><a href="#change-password-page" data-deactivate="#profile-add-modal">Change Password</a></p>
+			     		<p><a href="#" class="js-logout" data-deactivate="#profile-add-modal">Logout</a></p>
 			    	</div>
 			    </div>
 			</div>
@@ -222,15 +202,15 @@
 		<footer data-role="footer">
 			<ul>
 				<li>
-					<a href="#map-page">
-						<img class="nav-icon" src="images/icons/map-gray.svg" alt="Map icon">
-						<div class="nav-label">Map</div>
-					</a>
-				</li>
-				<li>
 					<a href="#list-page">
 						<img class="nav-icon" src="images/icons/list-gray.svg" alt="List icon">
 						<div class="nav-label">List</div>
+					</a>
+				</li>
+				<li>
+					<a href="#map-page">
+						<img class="nav-icon" src="images/icons/map-gray.svg" alt="Map icon">
+						<div class="nav-label">Map</div>
 					</a>
 				</li>
 				<li>
@@ -243,261 +223,173 @@
 		</footer>
 	</section>
 
-	<!-- Location CRUD Pages -->
-
-	<section data-role="page" id="add-location-page">
-		<header data-role="header">
-	        <h1>Add Location</h1>
-	        <ul>
-	            <li>
-	            	<a href="#" data-rel="back">
-	            		<img src="images/icons/arrow-left-gray.svg" alt="Back icon">
-	            	</a>
-	            </li>
-	            <li class="flex-stretch"></li>
-	        </ul>
-      	</header>
-		<div data-role="main" class="form-page">
-			<div class="overscroll">
-				<form action="" id="add-location-form" data-ajax="false">
-					<div class="form-control">
-						<label for="add-unyun-name" class="form-label">Select Unyun</label>
-						<select name="unyun-name" id="add-unyun-name" data-role="none" class="dropdown">
-							<option class="options" value="option1">Green onions</option>
-							<option class="options" value="option2">Tomatoes</option>
-							<option class="options" value="option3">Eggs</option>
-							<option class="options" value="option4">Garlic</option>
-							<option class="options" value="option5">Grapes</option>
-							<option class="options" value="option6">Plums</option>
-						</select>
-					</div>
-					<div class="form-control">
-						<label for="add-price" class="form-label">Price</label>
-						<input type="text" class="form-input" id="add-price" data-role="none" placeholder="i.e. $1.00">
-					</div>
-					<div class="form-control">
-						<label for="add-location" class="form-label">Location</label>
-						<input type="text" class="form-input" id="add-location" data-role="none" placeholder="Add location">
-					</div>
-					<div class="form-control">
-						<label for="quantity" class="form-label">Quantity</label>
-						<div class="display-flex space-between">
-							<div class="flex-stretch margin-right">
-								<select name="quantity" id="add-quantity"  data-role="none" class="dropdown">
-									<option class="options" value="option1">1</option>
-									<option class="options" value="option2">2</option>
-									<option class="options" value="option3">3</option>
-									<option class="options" value="option4">4</option>
-									<option class="options" value="option5">5</option>
-									<option class="options" value="option6">6</option>
-									<option class="options" value="option7">7</option>
-									<option class="options" value="option8">8</option>
-									<option class="options" value="option9">9</option>
-									<option class="options" value="option10">10</option>
-								</select>
-							</div>
-							<div class="flex-stretch">
-								<select name="units" id="add-units"  data-role="none" class="dropdown">
-									<option class="options" value="option1">items</option>
-									<option class="options" value="option2">lb</option>
-								</select>
-							</div>
-						</div>
-					</div>
-					<div class="form-upload-photo">
-						<img src="images/add-unyun-location.jpg" alt="Upload Unyun Photo">
-					</div>
-					<div class="form-control">
-						<a href="#list-page" class="form-button button-primary">Save Unyun Price</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</section>
-
-	<section data-role="page" id="edit-location-page">
-		<header data-role="header">
-	        <h1>Edit Location</h1>
-	        <ul>
-	            <li>
-	            	<a href="#" data-rel="back">
-	            		<img src="images/icons/arrow-left-gray.svg" alt="Back icon">
-	            	</a>
-	            </li>
-	            <li class="flex-stretch"></li>
-	        </ul>
-      	</header>
-		<div data-role="main" class="form-page">
-			<div class="overscroll">
-				<form action="" id="edit-location-form" data-ajax="false">
-					<div class="form-control">
-						<label for="edit-unyun-name" class="form-label">Select Unyun</label>
-						<select name="unyun-name" id="edit-unyun-name" data-role="none" class="dropdown">
-							<option class="options" value="option1">Green onions</option>
-							<option class="options" value="option2">Tomatoes</option>
-							<option class="options" value="option3">Eggs</option>
-							<option class="options" value="option4">Garlic</option>
-							<option class="options" value="option5">Grapes</option>
-							<option class="options" value="option6">Plums</option>
-						</select>
-					</div>
-					<div class="form-control">
-						<label for="edit-price" class="form-label">Price</label>
-						<input type="text" class="form-input" id="edit-price" data-role="none" value="$1.29">
-					</div>
-					<div class="form-control">
-						<label for="edit-location" class="form-label">Location</label>
-						<input type="text" class="form-input" id="edit-location" data-role="none" value="Trader Joe's">
-					</div>
-					<div class="form-control">
-						<label for="quantity" class="form-label">Quantity</label>
-						<div class="display-flex space-between">
-							<div class="flex-stretch margin-right">
-								<select name="quantity" id="edit-quantity"  data-role="none" class="dropdown">
-									<option class="options" value="option1">1</option>
-									<option class="options" value="option2">2</option>
-									<option class="options" value="option3">3</option>
-									<option class="options" value="option4">4</option>
-									<option class="options" value="option5">5</option>
-									<option class="options" value="option6">6</option>
-									<option class="options" value="option7">7</option>
-									<option class="options" value="option8">8</option>
-									<option class="options" value="option9">9</option>
-									<option class="options" value="option10">10</option>
-								</select>
-							</div>
-							<div class="flex-stretch">
-								<select name="units" id="edit-units"  data-role="none" class="dropdown">
-									<option class="options" value="option1">items</option>
-									<option class="options" value="option2">lb</option>
-								</select>
-							</div>
-						</div>
-					</div>
-					<div class="form-upload-photo">
-						<img src="images/unyun-photos/change-unyun-photo.jpg" alt="Change Unyun Photo" style="width:100%;height:auto">
-					</div>
-					<div class="form-control">
-						<a href="#list-page" class="form-button button-primary">Save changes</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</section>
-
 	<!-- Unyun CRUD Pages -->
+
+	<section data-role="page" id="unyun-add-page">
+		<header data-role="header">
+	        <h1>New Unyun</h1>
+	        <ul>
+	        	<li><a href="#" data-rel="back">Cancel</a></li>
+	            <li class="flex-stretch"></li>
+	            <li><a href="#" class="js-unyun-add">Save</a></li>
+	        </ul>
+      	</header>
+		<div data-role="main" class="display-flex flex-column">
+			<form id="unyun-add-form" data-ajax="false" style="padding:1em">
+		    	<input type="hidden" id="unyun-add-destination" value="#list-page">
+		    	<div>
+                	<input type="hidden" id="unyun-add-image">
+                  	<label class="image-uploader thumbnail">
+                    	<input type="file" data-role="none" id="unyun-add-upload">
+                  	</label>
+                </div>
+			    <div class="form-control">
+			       <label for="unyun-add-type" class="form-label">Unyun Name</label>
+			       <input id="unyun-add-type" type="text" class="form-input" data-role="none" placeholder="i.e. Green Onions">
+			    </div>
+			    <div class="form-control">
+			       <label for="unyun-add-category" class="form-label">Food Category</label>
+			       <input id="unyun-add-category" type="text" class="form-input" data-role="none" placeholder="i.e. Fruits, Vegetables, or Pantry">
+			    </div>
+		 	</form>
+		</div>
+	</section>	
 
 	<section data-role="page" id="unyun-profile-page">
 		<header data-role="header">
-	         <h1>Unyun</h1>
-	         <ul>
-	            <li>
-	            	<a href="#" data-rel="back">
-	            		<img src="images/icons/arrow-left-gray.svg" alt="Back icon">
-	            	</a>
-	            </li>
+	        <h1>Unyun Profile</h1>
+	        <ul>
+	            <li><a href="#" data-rel="back">Back</a></li>
 	            <li class="flex-stretch"></li>
-	            <li>
-					<a href="#" data-toggle="#unyun-add-modal">
-						<img src="images/icons/more-vertical-gray.svg" alt="More options icon">
-					</a>
-				</li>
-	         </ul>
+	            <li><a href="#unyun-edit-page">Edit</a></li>
+	        </ul>
       	</header>
-      	<div data-role="main">
-        	<div class="modal" id="unyun-add-modal">
-	            <div class="modal-back" data-toggle="#unyun-add-modal"></div>
-		        <div class="modal-drawer left">
-		            <div class="modal-body">
-		             	<p><a href="#edit-location-page" class="js-logout">Edit Location</a></p>
-		             	<p><a href="#" class="js-logout">Delete Location</a></p>
-		            </div>
-		        </div>
-        	</div>
-        	<div class="unyun-profile-photo"></div>
-	        <div class="unyun-profile-info">
-	        	<div class="form-control">
-					<label for="unyun-profile-location" class="form-label">Location</label>
-					<input id="unyun-profile-location" type="" class="unyun-input-default" data-role="none" value="Trader Joe's">
+      	<div data-role="main" class="display-flex flex-column">
+	        	<div class="unyun-top"></div>
+		        <div class="unyun-bottom">
+				   <div class="map behind"></div>
+				   <div class="floater bottom wide form-control">
+				      <a href="#location-add-page" class="form-button button-primary">&plus; Add Location</a>
+				   </div>
 				</div>
-				<div class="form-control">
-					<label for="unyun-profile-price" class="form-label">Price</label>
-					<input id="unyun-profile-price" type="" class="unyun-input-default" data-role="none" value="$1.29">
-				</div>
-				<div class="form-control">
-					<label for="unyun-profile-quantity" class="form-label">Quantity</label>
-					<input id="unyun-profile-quantity" type="" class="unyun-input-default" data-role="none" value="1">
-				</div>
-				<div class="form-control">
-					<label for="unyun-profile-unit-price" class="form-label">Units</label>
-					<input id="unyun-profile-unit-price" type="" class="unyun-input-default" data-role="none" value="item">
-				</div>
-	        </div>
-      	</div>
+        </div>
 	</section>
+
+	<section data-role="page" id="unyun-edit-page">
+		<header data-role="header">
+			<h1>Unyun Info</h1>
+			<ul>
+			    <li><a href="#" data-rel="back">Back</a></li>
+			    <li class="flex-stretch"></li>
+			    <li><a href="#" class="js-unyun-edit">Save</a></li>
+			</ul>
+		</header>
+		<div data-role="main" class="display-flex flex-column">
+			<form id="unyun-edit-form" data-ajax="false" style="padding:1em"></form>
+		</div>
+    </section>
+
+	<!-- Location CRUD Pages -->
+
+	<section data-role="page" id="location-add-page">
+		<header data-role="header">
+			<h1>Choose Location</h1>
+			<ul>
+				<li><a href="#" data-rel="back">Cancel</a></li>
+				<li class="flex-stretch"></li>
+				<li><a href="#location-description-page">Next</a></li>
+			</ul>
+		</header>
+		<div data-role="main">
+			<input type="hidden" id="location-add-lat">
+			<input type="hidden" id="location-add-lng">
+			<div class="map"></div>
+		</div>
+    </section>
+
+	<section data-role="page" id="location-description-page">
+		<header data-role="header">
+			<h1>Add Details</h1>
+		 	<ul>
+			    <li><a href="#" data-rel="back">Back</a></li>
+			    <li class="flex-stretch"></li>
+			    <li><a href="#" class="js-location-add">Save</a></li>
+			</ul>
+		</header>
+		<div data-role="main">
+			<div class="overscroll">
+			    <form id="location-add-form" data-ajax="false" style="padding:1em">
+			       <!-- <div>
+			        	<input type="hidden" id="location-add-image">
+			        	<label class="image-uploader thumbnail">
+			        		<input type="file" data-role="none" id="location-add-upload">
+			       		</label>
+			       </div> -->
+			       <div class="form-control">
+				       <label for="location-add-price" class="form-label">Price</label>
+				       <input id="location-add-price" type="text" class="form-input" data-role="none" placeholder="$1.00">
+				   </div>
+				   <div class="form-control">
+				       <label for="location-add-quantity" class="form-label">Quantity</label>
+				       <input id="location-add-quantity" type="number" class="form-input" data-role="none" placeholder="10">
+				   </div>
+				   <div class="form-control">
+				       <label for="location-add-unit-price" class="form-label">Unit Price</label>
+				       <input id="location-add-unit-price" type="text" class="form-input" data-role="none" placeholder="$0.10">
+				   </div>
+				   <div class="form-control">
+				       <label for="location-add-name" class="form-label">Location Name</label>
+				       <input id="location-add-name" type="text" class="form-input" data-role="none" placeholder="i.e. Trader Joe's, Farmer's Market">
+				   </div>
+			       <div class="form-control">
+			        	<label for="location-add-description" class="form-label">Notes</label>
+			        	<textarea id="location-add-description" class="form-input" data-role="none" placeholder="Anything noteworthy about this Unyun at this location?"></textarea>
+			       </div>
+			    </form>
+		 	</div>
+		</div>
+    </section>
 
 	<!-- User CRUD Pages -->
 
-	<section data-role="page" id="edit-user-page">
+	<section data-role="page" id="user-edit-page">
 		<header data-role="header">
-	        <h1>Edit Profile</h1>
-	        <ul>
-	            <li>
-	            	<a href="#" data-rel="back">
-	            		<img src="images/icons/arrow-left-gray.svg" alt="Back icon">
-	            	</a>
-	            </li>
+        	<h1>Profile Settings</h1>
+        	<ul>
+	            <li><a href="#" data-rel="back">Cancel</a></li>
 	            <li class="flex-stretch"></li>
-	        </ul>
+	            <li><a href="#" class="js-user-edit">Save</a></li>
+         	</ul>
       	</header>
-		<div data-role="main" class="form-page">
-			<div class="overscroll">
-				<form action="" id="edit-profile-form" data-ajax="false">
-					<div class="profile-info center margin-top">
-						<img src="images/profile-photo-hover.jpg" alt="User profile photo">
-					</div>
-					<div class="form-control">
-						<label for="edit-profile-name" class="form-label">Name</label>
-						<input type="text" class="form-input" id="edit-profile-name" data-role="none" value="Tiffany Zheng">
-					</div>
-					<div class="form-control">
-						<label for="profile-city" class="form-label">City</label>
-						<input type="text" class="form-input" id="profile-city" data-role="none" value="Los Angeles, CA">
-					</div>
-					<div class="form-control">
-						<label for="profile-username" class="form-label">Username</label>
-						<input type="text" class="form-input" id="profile-username" data-role="none" value="tiffzheng">
-					</div>
-					<div class="form-control">
-						<label for="profile-email-address" class="form-label">Email address</label>
-						<input type="email" class="form-input" id="profile-email-address" data-role="none" value="tiffzheng@gmail.com">
-					</div>
-					<div class="form-control">
-						<a href="#list-page" class="form-button button-primary">Save changes</a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</section>
-
-	<section data-role="page" id="user-upload-page">
-      <header data-role="header">
-         <h1>Choose Image</h1>
-         <ul>
-            <li><a href="#" data-rel="back">Back</a></li>
-            <li class="flex-stretch"></li>
-            <li><a href="#" class="js-user-upload">Save</a></li>
-         </ul>
-      </header>
-      <<div data-role="main">
-         <form id="user-upload-form" data-ajax="false">
-            <input type="hidden" id="user-upload-image">
-            <label class="image-uploader full">
-               <input type="file" data-role="none" id="user-upload-input">
-            </label>
-         </form>
-      </div>
+      	<div data-role="main">
+        	<form id="user-edit-form" data-ajax="false" style="padding:1em"></form>
+      	</div>
     </section>
+
+   	<section data-role="page" id="user-upload-page">
+    	<header data-role="header">
+        	<h1>Upload Photo</h1>
+        	<ul>
+	            <li><a href="#" data-rel="back">Cancel</a></li>
+	            <li class="flex-stretch"></li>
+	            <li><a href="#" class="js-user-upload">Save</a></li>
+        	</ul>
+    	</header>
+   		<div data-role="main">
+   			<div class="upload-phrase">
+   				Tap anywhere on the image to upload a new profile photo.
+   			</div>
+        	<form id="user-upload-form" data-ajax="false">
+	            <input type="hidden" id="user-upload-image">
+	            <label class="image-uploader full">
+	            	<input type="file" data-role="none" id="user-upload-input">
+	            </label>
+         	</form>
+    	</div>
+    </section>
+
+
+    <!-- Settings -->
 
     <section data-role="page" id="change-password-page">
 		<header data-role="header">
@@ -533,6 +425,12 @@
 			</div>
 		</div>
 	</section>
+
+	<div class="modal" id="warning-modal">
+    	<div class="modal-toast top" data-deactivate="#warning-modal">
+        	<div class="message">Oops, something went wrong!</div>
+    	</div>
+    </div>
 
 
 </body>

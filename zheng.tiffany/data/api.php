@@ -120,8 +120,23 @@ function makeStatement ($data) {
          return makeQuery($c,"SELECT * FROM
             `track_unyuns`
             WHERE
-               `name` LIKE ?
+               `type` LIKE ?
                AND user_id = ?
+            ",$p);
+
+      case "unyun_search_recent":
+         $p = ["%$p[0]%",$p[1]];
+         return makeQuery($c,"SELECT * FROM
+            `track_unyuns` u
+            LEFT JOIN (
+               SELECT * FROM `track_locations`
+               ORDER BY `date_create` DESC
+            ) l
+            ON u.id = l.unyun_id
+            WHERE 
+               u.type LIKE ?
+               AND u.user_id = ?
+            GROUP BY l.unyun_id
             ",$p);
 
 
@@ -133,7 +148,7 @@ function makeStatement ($data) {
             WHERE
                `$p[0]` = ?
                AND user_id = ?
-            ",[$p[1],$p[2]]);
+            ",$p[1]);
    
 
 
@@ -151,7 +166,7 @@ function makeStatement ($data) {
             `track_users`
             (`name`,`username`,`email`,`password`,`img`,`phone`,`gender`,`date_create`)
             VALUES
-            (' ', ?, ?, md5(?), 'https://via.placeholder.com/400/?text=USER', ' ', ' ', NOW())
+            (' ', ?, ?, md5(?), './images/icons/user-profile-empty.svg', ' ', ' ', NOW())
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
 
@@ -185,7 +200,38 @@ function makeStatement ($data) {
 
       // CREATE UNYUN
 
+      case "insert_unyun":
+         $r = makeQuery($c,"INSERT INTO
+            `track_unyuns`
+            (`user_id`,`category`,`type`,`img`,`date_create`)
+            VALUES
+            (?, ?, ?, './images/icons/unyun-image-empty.svg', NOW())
+            ",$p,false);
+         return ["id"=>$c->lastInsertId()];
+
+      // UPDATE UNYUN IMAGE
+
+      // case "update_unyun_image":
+      //    $r = makeQuery($c,"UPDATE
+      //       `track_unyuns`
+      //       SET
+      //          `img` = ?
+      //       WHERE `id` = ?
+      //       ",$p,false);
+      //    return ["result"=>"success"];
+
       // UPDATE UNYUN
+
+      case "update_unyun":
+         $r = makeQuery($c,"UPDATE
+            `track_unyuns`
+            SET
+               `category` = ?,
+               `type` = ?,
+               `img` = ?
+            WHERE `id` = ?
+            ",$p,false);
+         return ["result"=>"success"];
 
       // DELETE UNYUN
 
@@ -196,7 +242,14 @@ function makeStatement ($data) {
 
       // CREATE LOCATION
 
-      // UPDATE LOCATION
+      case "insert_location":
+         $r = makeQuery($c,"INSERT INTO
+            `track_locations`
+            (`unyun_id`,`lat`,`lng`,`price`,`quantity`,`unit_price`,`location_name`,`description`,`photo`,`icon`,`date_create`)
+            VALUES
+            (?, ?, ?, ?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=Location', 'https://via.placeholder.com/100/?text=Icon', NOW())
+            ",$p,false);
+         return ["id"=>$c->lastInsertId()];
 
       // DELETE LOCATION
 
@@ -204,18 +257,16 @@ function makeStatement ($data) {
          return makeQuery($c,"DELETE FROM `track_locations` WHERE `id` = ?",$p,false);
 
       default: return ["error"=>"No Matched type"];
-
-
-
    }
 }
+
+
 
 
 if(!empty($_FILES)) {
    $r = makeUpload("image","../uploads/");
    die(json_encode($r));
 }
-
 
 
 $data = json_decode(file_get_contents("php://input"));

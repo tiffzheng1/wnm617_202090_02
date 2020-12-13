@@ -37,16 +37,20 @@ const MapPage = async() => {
 }
 
 //async and await
+
 const ListPage = async() => {
 	let d = await query({
 		type:'unyuns_by_user_id',
 		params:[sessionStorage.userId]
 	});
 
+   $("#list-page .filter-row").html(makeFilterRow(d.result))
+
 	console.log(d)
 
    drawUnyunList(d.result);
 }
+
 
 
 const UserProfilePage = async() => {
@@ -61,17 +65,98 @@ const UserProfilePage = async() => {
 		.html(makeUserProfile(d.result));
 }
 
-const UnyunProfilePage = async() => {
-	let d = await query({
-		type:'unyun_by_id',
-		params:[sessionStorage.unyunId]
-	});
+const UserEditPage = async() => {
+   query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   }).then(d=>{
+      console.log(d)
 
-	console.log(d)
-
-	$("#unyun-profile-page .profile")
-		.html(makeUnyunProfile(d.result));
+      $("#user-edit-form")
+         .html(makeUserEditForm(d.result[0]));
+   });
 }
+
+const UserUploadPage = async() => {
+   query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   }).then(d=>{
+      console.log(d)
+
+      makeUploaderImage($("#user-upload-input"),d.result[0].img)
+   });
+}
+
+
+const UnyunProfilePage = async() => {
+   query({
+      type:'unyun_by_id',
+      params:[sessionStorage.unyunId]
+   }).then(d=>{
+      console.log(d)
+
+      $("#unyun-profile-page .unyun-top")
+         .html(makeUnyunProfile(d.result));
+   })
+
+   query({
+      type:'locations_by_unyun_id',
+      params:[sessionStorage.unyunId]
+   }).then(d=>{
+      makeMap("#unyun-profile-page .map").then(map_el=>{
+         makeMarkers(map_el,d.result);
+      })
+   }) 
+
+}
+
+const UnyunEditPage = async() => {
+   query({
+      type:'unyun_by_id',
+      params:[sessionStorage.unyunId]
+   }).then(d=>{
+      console.log(d)
+
+      $("#unyun-edit-form")
+         .html(makeUnyunEditForm(d.result[0]));
+   });
+}
+
+
+
+const LocationAddPage = async() => {
+   let map_el = await makeMap("#location-add-page .map");
+   makeMarkers(map_el,[]);
+
+   let map = map_el.data("map");
+
+   map.addListener("click",function(e){
+      console.log(e, map.getCenter())
+
+      let posFromClick = {
+         lat:e.latLng.lat(),
+         lng:e.latLng.lng(),
+         icon:"./images/icons/map-pin-green.svg"
+      };
+      let posFromCenter = {
+         lat:map.getCenter().lat(),
+         lng:map.getCenter().lng(),
+         icon:"./images/icons/map-pin-green.svg"
+      };
+
+      $("#location-add-lat").val(posFromClick.lat)
+      $("#location-add-lng").val(posFromClick.lng)
+
+      makeMarkers(map_el,[posFromClick])
+   })
+}
+
+
+
+
+
+
 
 
 
