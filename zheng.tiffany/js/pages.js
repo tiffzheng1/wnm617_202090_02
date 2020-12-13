@@ -54,15 +54,21 @@ const ListPage = async() => {
 
 
 const UserProfilePage = async() => {
-	let d = await query({
-		type:'user_by_id',
-		params:[sessionStorage.userId]
+	let d = await 
+
+   query({type:'user_by_id',params:[sessionStorage.userId]}).then(d=>{
+
+      console.log(d)
+
+      $("#user-profile-page .profile")
+         .html(makeUserProfile(d.result));
 	});
 
-	console.log(d)
+   query({type:'unyuns_by_user_id',params:[sessionStorage.userId]}).then(d=>{
 
-	$("#user-profile-page .profile")
-		.html(makeUserProfile(d.result));
+      // console.log(d)
+      $('.unyuns-added').html(d.result.length);
+   })
 }
 
 const UserEditPage = async() => {
@@ -111,6 +117,15 @@ const UnyunProfilePage = async() => {
 
 }
 
+const UnyunAddPage = async() => {
+   query({
+      type:'user_by_id',
+      params:[sessionStorage.userId]
+   }).then(d=>{
+      console.log(d)
+   });
+}
+
 const UnyunEditPage = async() => {
    query({
       type:'unyun_by_id',
@@ -137,12 +152,12 @@ const LocationAddPage = async() => {
       let posFromClick = {
          lat:e.latLng.lat(),
          lng:e.latLng.lng(),
-         icon:"./images/icons/map-pin-green.svg"
+         icon:"images/icons/map-pin-green.svg"
       };
       let posFromCenter = {
          lat:map.getCenter().lat(),
          lng:map.getCenter().lng(),
-         icon:"./images/icons/map-pin-green.svg"
+         icon:"images/icons/map-pin-green.svg"
       };
 
       $("#location-add-lat").val(posFromClick.lat)

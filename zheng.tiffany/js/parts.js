@@ -50,7 +50,7 @@ const makeUserProfile = templater(o=>`
 	<div class="display-flex">
 		<div class="flex-stretch profile-stat">
 			<div class="stat-label">Unyun Types</div>
-			<div class="big-number">6</div>
+			<div class="big-number unyuns-added">${o.length}</div>
 		</div>
 		<div class="flex-stretch profile-stat">
 			<div class="stat-label">Locations Added</div>

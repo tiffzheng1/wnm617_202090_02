@@ -32,7 +32,14 @@ const makeMarkers = (map_el, map_locs) => {
    map_locs.forEach(o=>{
       let m = new google.maps.Marker({
          position: o,
-         map: map
+         map: map,
+         icon:{
+            url: o.icon,
+            scaledSize: {
+               width: 40,
+               height: 40
+            }
+         }
       });
       markers.push(m);
    })

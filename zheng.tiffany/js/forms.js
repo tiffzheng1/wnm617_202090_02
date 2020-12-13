@@ -38,6 +38,27 @@ const checkUserEditForm = () => {
 }
 
 
+// const checkUnyunAddForm = () => {
+//    let category = $("#unyun-add-category").val();
+//    let type = $("#unyun-add-type").val();
+//    let img = $("#unyun-add-image").val();
+
+//    query({
+//       type:'insert_unyun',
+//       params:[category,type,img,sessionStorage.userId]})
+//    .then(d=>{
+//       if(d.error) {
+//          throw d.error;
+//       }
+//       console.log(d.id)
+
+//       $("#unyun-add-form")[0].reset();
+
+//       sessionStorage.unyunId = d.id;
+//       $.mobile.navigate($("#unyun-add-destination").val());
+//    })
+// }
+
 const checkUnyunAddForm = () => {
    let category = $("#unyun-add-category").val();
    let type = $("#unyun-add-type").val();
@@ -45,12 +66,12 @@ const checkUnyunAddForm = () => {
 
    query({
       type:'insert_unyun',
-      params:[category,type,img,sessionStorage.userId]})
+      params:[sessionStorage.userId,category,type,img]})
    .then(d=>{
       if(d.error) {
          throw d.error;
       }
-      console.log(d.id)
+      console.log(category,type,d)
 
       $("#unyun-add-form")[0].reset();
 
@@ -127,7 +148,7 @@ const checkSearchForm = async () => {
    let r = await query({type:"search_unyuns",params:[s,sessionStorage.userId]});
 
    drawUnyunList(r.result,`
-      <div class="list-empty-phrase">
+      <div class="list-empty-phrase padding-top">
          Oops, there is no Unyun by that name yet.
       </div>
       `);
@@ -141,15 +162,15 @@ const checkFilterRow = async (d) => {
       await query({
          type:'unyuns_by_user_id',
          params:[sessionStorage.userId]
-      }):
+      }) :
       await query({
          type:'unyun_filter',
          params:[d.field,d.value,sessionStorage.userId]
       });
 
-   console.log(r);
+   console.log(r)
    drawUnyunList(r.result,`
-      <div class="list-empty-phrase">
+      <div class="list-empty-phrase padding-top">
          Oops, there are no Unyuns in that category yet.
       </div>
       `);

@@ -23,6 +23,7 @@ $(()=>{
 			case 'user-upload-page': UserUploadPage(); break;
 
 			case 'unyun-profile-page': UnyunProfilePage(); break;
+			// case 'unyun-add-page': UnyunAddPage(); break;
 			case 'unyun-edit-page': UnyunEditPage(); break;
 
 			case 'location-add-page': LocationAddPage(); break;

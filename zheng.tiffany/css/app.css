@@ -876,6 +876,7 @@ a.active-tab {
 
 #list-page .list-page-filters {
 	box-shadow: none;
+	border-bottom: 1px solid var(--color-neutral-light);
 }
 
 #list-page [data-role='main'] ul {
@@ -945,7 +946,6 @@ a.active-tab {
 	display: flex;
 	overflow: auto;
 	padding: 0.5em 1em;
-    justify-content: space-between;
 }
 
 /*Image Uploader*/

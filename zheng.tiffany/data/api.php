@@ -96,6 +96,7 @@ function makeStatement ($data) {
 
 		case "unyuns_by_user_id":
 			return makeQuery($c,"SELECT * FROM `track_unyuns` WHERE `user_id` = ?",$p);
+
 		case "locations_by_unyun_id":
 			return makeQuery($c,"SELECT * FROM `track_locations` WHERE `unyun_id` = ?",$p);
 
@@ -148,7 +149,7 @@ function makeStatement ($data) {
             WHERE
                `$p[0]` = ?
                AND user_id = ?
-            ",$p[1]);
+            ",[$p[1],$p[2]]);
    
 
 
@@ -200,14 +201,24 @@ function makeStatement ($data) {
 
       // CREATE UNYUN
 
+      // case "insert_unyun":
+      //    $r = makeQuery($c,"INSERT INTO
+      //       `track_unyuns`
+      //       (`user_id`,`category`,`type`,`img`,`date_create`)
+      //       VALUES
+      //       (?, ?, ?, './images/icons/unyun-image-empty.svg', NOW())
+      //       ",$p,false);
+      //    return ["id"=>$c->lastInsertId()];
+
       case "insert_unyun":
          $r = makeQuery($c,"INSERT INTO
             `track_unyuns`
             (`user_id`,`category`,`type`,`img`,`date_create`)
             VALUES
-            (?, ?, ?, './images/icons/unyun-image-empty.svg', NOW())
+            (?, ?, ?, ?, NOW())
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
+
 
       // UPDATE UNYUN IMAGE
 
@@ -245,9 +256,9 @@ function makeStatement ($data) {
       case "insert_location":
          $r = makeQuery($c,"INSERT INTO
             `track_locations`
-            (`unyun_id`,`lat`,`lng`,`price`,`quantity`,`unit_price`,`location_name`,`description`,`photo`,`icon`,`date_create`)
+            (`unyun_id`,`lat`,`lng`,`price`,`quantity`,`unit_price`,`location_name`,`description`,`icon`,`date_create`)
             VALUES
-            (?, ?, ?, ?, ?, ?, ?, ?, 'https://via.placeholder.com/400/?text=Location', 'https://via.placeholder.com/100/?text=Icon', NOW())
+            (?, ?, ?, ?, ?, ?, ?, ?, './images/icons/map-pin-green.svg', NOW())
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
 
