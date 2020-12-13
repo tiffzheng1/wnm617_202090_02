@@ -1,5 +1,3 @@
-
-
 const makeMap = async (target, center={lat: 34.059721, lng: -118.300909}) => {
    await checkData(()=>window.google);
 
@@ -87,27 +85,6 @@ const setMapBounds = (map_el, map_locs) => {
       map.fitBounds(bounds);
    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

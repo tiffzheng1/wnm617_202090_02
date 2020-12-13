@@ -115,6 +115,30 @@ function makeStatement ($data) {
             GROUP BY l.unyun_id
             ",$p);
 
+      case "locations_by_user_id":
+         return makeQuery($c,"SELECT * FROM `track_unyuns` un 
+            LEFT JOIN `track_locations` l 
+            ON un.id = l.unyun_id
+            left join `track_users` u on u.id = un.user_id
+            WHERE `user_id` = ?
+            ",$p);
+
+
+      // case "locations_by_user_id":
+      //    return makeQuery($c,"SELECT * FROM 
+      //       `track_users` a 
+      //       LEFT JOIN (
+      //          SELECT * FROM `track_unyuns`
+      //       ) u 
+      //       LEFT JOIN (
+      //          SELECT * FROM `track_locations`
+      //          ORDER BY `date_create` DESC 
+      //       ) l 
+      //       ON u.id = l.unyun_id
+      //       WHERE `user_id` = ?
+      //       GROUP BY l.unyun_id
+      //       ",$p);
+
 
       case "search_unyuns":
          $p = ["%$p[0]%",$p[1]];

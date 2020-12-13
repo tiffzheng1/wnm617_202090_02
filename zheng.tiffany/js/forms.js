@@ -1,4 +1,3 @@
-
 const checkSignupForm = () => {
    let username = $("#signup-username").val();
    let email = $("#signup-email").val();
@@ -222,6 +221,13 @@ const checkUnyunUpload = () => {
       window.history.back();
    })
 }
+
+
+
+
+
+
+
 
 
 

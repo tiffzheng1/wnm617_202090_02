@@ -1,7 +1,6 @@
-
 const MapPage = async() => {
 
-	let d = await query({
+   let d = await query({
       type:'recent_locations',
       params:[sessionStorage.userId]
    });
@@ -9,9 +8,9 @@ const MapPage = async() => {
    console.log(d)
 
    let valid_unyuns = d.result.reduce((r,o)=>{
-   		o.icon = o.img;
-   		if(o.lat && o.lng) r.push(o);
-   		return r;
+         o.icon = o.img;
+         if(o.lat && o.lng) r.push(o);
+         return r;
    },[])
 
 
@@ -22,31 +21,31 @@ const MapPage = async() => {
    makeMarkers(map_el,valid_unyuns);
 
    map_el.data("markers").forEach((o,i)=>{
-   	o.addListener("click",function(){
-   		// Go to Unyun Profile Page
-   		// sessionStorage.unyunId = valid_unyuns[i].unyun_id;
-   		// $.mobile.navigate("#unyun-profile-page");
+      o.addListener("click",function(){
+         // Go to Unyun Profile Page
+         // sessionStorage.unyunId = valid_unyuns[i].unyun_id;
+         // $.mobile.navigate("#unyun-profile-page");
 
-   		// InfoWindow
-   		map_el.data("infoWindow")
-   			.open(map_el.data("map"),o);
-   		map_el.data("infoWindow")
-   			.setContent(makeUnyunPopup(valid_unyuns[i]));
-   	})
+         // InfoWindow
+         map_el.data("infoWindow")
+            .open(map_el.data("map"),o);
+         map_el.data("infoWindow")
+            .setContent(makeUnyunPopup(valid_unyuns[i]));
+      })
    })
 }
 
 //async and await
 
 const ListPage = async() => {
-	let d = await query({
-		type:'unyuns_by_user_id',
-		params:[sessionStorage.userId]
-	});
+   let d = await query({
+      type:'unyuns_by_user_id',
+      params:[sessionStorage.userId]
+   });
 
    $("#list-page .filter-row").html(makeFilterRow(d.result))
 
-	console.log(d)
+   console.log(d)
 
    drawUnyunList(d.result);
 }
@@ -54,7 +53,7 @@ const ListPage = async() => {
 
 
 const UserProfilePage = async() => {
-	let d = await 
+   let d = await 
 
    query({type:'user_by_id',params:[sessionStorage.userId]}).then(d=>{
 
@@ -62,12 +61,18 @@ const UserProfilePage = async() => {
 
       $("#user-profile-page .profile")
          .html(makeUserProfile(d.result));
-	});
+   });
 
    query({type:'unyuns_by_user_id',params:[sessionStorage.userId]}).then(d=>{
 
       // console.log(d)
       $('.unyuns-added').html(d.result.length);
+   })
+
+   query({type:'locations_by_user_id',params:[sessionStorage.userId]}).then(d=>{
+
+      console.log(d)
+      $('.locations-added').html(d.result.length);
    })
 }
 
@@ -166,21 +171,6 @@ const LocationAddPage = async() => {
       makeMarkers(map_el,[posFromClick])
    })
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,4 +1,3 @@
-
 const drawUnyunList = (a,empty_phrase=`
    <div class="list-empty-graphic">
       <img src="./images/icons/list-page-empty-state.svg" alt="No Unyuns yet!">
@@ -20,14 +19,14 @@ const drawUnyunList = (a,empty_phrase=`
 
 const makeUnyunList = templater(o=>`
 <li class="js-unyun-jump" data-id=${o.id}>
-	<div class="unyun-thumbnail">
-		<img src="${o.img}" alt="${o.type}">
-	</div>
-	<div class="unyun-info flex-stretch">
-		<div class="unyun-type">${o.type}</div>
-		<div class="unyun-category">${o.category}</div>
-	</div>
-	<div class="entry-date flex-none">${o.date_create}</div>
+   <div class="unyun-thumbnail">
+      <img src="${o.img}" alt="${o.type}">
+   </div>
+   <div class="unyun-info flex-stretch">
+      <div class="unyun-type">${o.type}</div>
+      <div class="unyun-category">${o.category}</div>
+   </div>
+   <div class="entry-date flex-none">${o.date_create}</div>
 </li>
 `);
 
@@ -42,21 +41,21 @@ const makeUserProfile = templater(o=>`
          </a>
       </div>
    </div>
-	<div class="user-name">${o.name}</div>
-	<div class="user-email">${o.email}</div>
+   <div class="user-name">${o.name}</div>
+   <div class="user-email">${o.email}</div>
 </div>
 <hr>
 <div class="profile-stats">
-	<div class="display-flex">
-		<div class="flex-stretch profile-stat">
-			<div class="stat-label">Unyun Types</div>
-			<div class="big-number unyuns-added">${o.length}</div>
-		</div>
-		<div class="flex-stretch profile-stat">
-			<div class="stat-label">Locations Added</div>
-			<div class="big-number">10</div>
-		</div>
-	</div>
+   <div class="display-flex">
+      <div class="flex-stretch profile-stat">
+         <div class="stat-label">Unyun Types</div>
+         <div class="big-number unyuns-added">${o.length}</div>
+      </div>
+      <div class="flex-stretch profile-stat">
+         <div class="stat-label">Locations Added</div>
+         <div class="big-number locations-added">${o.length}</div>
+      </div>
+   </div>
 </div>
 `);
 
@@ -74,13 +73,13 @@ const makeUnyunProfile = templater(o=>`
 const makeUnyunPopup = o=>`
 <a href="#" class="js-unyun-jump" data-id="${o.unyun_id}">
    <div class="display-flex">
-   	<div class="unyun-thumbnail">
-   	   <img src="${o.img}" alt="${o.type}">
-   	</div>
-   	<div>
-   	   <div class="unyun-type">${o.type}</div>
-   	   <div class="unyun-category">${o.category}</div>
-   	</div>
+      <div class="unyun-thumbnail">
+         <img src="${o.img}" alt="${o.type}">
+      </div>
+      <div>
+         <div class="unyun-type">${o.type}</div>
+         <div class="unyun-category">${o.category}</div>
+      </div>
    </div>
 </a>
 `;
@@ -108,7 +107,6 @@ const makeUnyunEditForm = o => `
       </div>
    </div>
 </div>
-
 <div>
    <input type="hidden" id="unyun-edit-image" value="${o.img}">
    <label class="image-uploader thumbnail picked" style="background-image:url('${o.img}')">
@@ -170,8 +168,8 @@ ${FormControl({
 
 
 const filterRow = (unyuns,category) => {
-	let a = [...(new Set(unyuns.map(o=>o[category])))];
-	return templater(o=>`<div class="filter" data-field="${category}" data-value="${o}">${o[0]+o.substr(1)}</div>`)(a);
+   let a = [...(new Set(unyuns.map(o=>o[category])))];
+   return templater(o=>`<div class="filter" data-field="${category}" data-value="${o}">${o[0]+o.substr(1)}</div>`)(a);
 }
 
 const makeFilterRow = (unyuns) => {
@@ -187,14 +185,6 @@ const makeUploaderImage = (el,name,folder='') => {
    $(el).parent().css({'background-image':`url('${folder+name}')`}).addClass("picked")
       .prev().val(folder+name)
 }
-
-
-
-
-
-
-
-
 
 
 
