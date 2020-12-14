@@ -48,12 +48,16 @@ const makeUserProfile = templater(o=>`
 <div class="profile-stats">
    <div class="display-flex">
       <div class="flex-stretch profile-stat">
-         <div class="stat-label">Unyun Types</div>
-         <div class="big-number unyuns-added">${o.length}</div>
+         <a href="#list-page">
+            <div class="stat-label">Unyun Types</div>
+            <div class="big-number unyuns-added">${o.length}</div>
+         </a>
       </div>
       <div class="flex-stretch profile-stat">
-         <div class="stat-label">Locations Added</div>
-         <div class="big-number locations-added">${o.length}</div>
+         <a href="#map-page">
+            <div class="stat-label">Locations Added</div>
+            <div class="big-number locations-added">${o.length}</div>
+         </a>
       </div>
    </div>
 </div>

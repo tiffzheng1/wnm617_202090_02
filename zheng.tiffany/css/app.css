@@ -53,10 +53,6 @@ a {
 	font-weight: bold;
 }
 
-a:hover {
-	text-decoration: underline;
-}
-
 ul li {
 	list-style: none;
 }
@@ -330,6 +326,7 @@ a.active-tab {
 
 #map-page .ui-header {
 	height: auto;
+	z-index: 10;
 }
 
 .hotdog {
