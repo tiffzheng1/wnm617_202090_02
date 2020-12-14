@@ -26,6 +26,7 @@ $(()=>{
 			case 'unyun-edit-page': UnyunEditPage(); break;
 
 			case 'location-add-page': LocationAddPage(); break;
+			case 'location-profile-page': LocationProfilePage(); break;
 
 		}
 	})
@@ -58,9 +59,11 @@ $(()=>{
     .on("click",".js-unyun-edit",function(e){
       checkUnyunEditForm();
     })
+
     .on("click",".js-user-edit",function(e){
       checkUserEditForm();
     })
+
     .on("click",".js-location-add",function(e){
       checkLocationAddForm();
     })
@@ -85,26 +88,23 @@ $(()=>{
     	sessionStorage.locationId = $(this).data("id");
       	$.mobile.navigate("#location-profile-page");
     })
+    .on("click",".js-location-delete",function(e){
+      	checkLocationDelete($(this).data("id"));
+    })
 
     .on("click",".js-unyun-upload",function(e){
     	checkUnyunUpload();
-    })
-   
+    })  
     .on("click",".js-user-upload",function(e){
     	checkUserUpload();
     })
-
-    .on("click",".js-location-add", function(e){
-		// e.preventDefault();
-
-		checkLocationAddForm();
-	})
 
 
 
 
 	.on("click",".filter",function(e){
     	checkFilterRow($(this).data());
+    	$(this).addClass("active").siblings('.active').toggleClass("active");
     })
 
 

@@ -280,11 +280,26 @@ function makeStatement ($data) {
       case "insert_location":
          $r = makeQuery($c,"INSERT INTO
             `track_locations`
-            (`unyun_id`,`lat`,`lng`,`price`,`quantity`,`unit_price`,`location_name`,`description`,`icon`,`date_create`)
+            (`unyun_id`,`lat`,`lng`,`price`,`quantity`,`location_name`,`description`,`icon`,`date_create`)
             VALUES
             (?, ?, ?, ?, ?, ?, ?, ?, './images/icons/map-pin-green.svg', NOW())
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
+
+      // UPDATE LOCATION
+
+      // case "update_location":
+      //    $r = makeQuery($c,"UPDATE
+      //       `track_locations`
+      //       SET
+      //          `price` = ?,
+      //          `quantity` = ?,
+      //          `unit_price` = ?,
+      //          `location_name` = ?,
+      //          `description` = ?
+      //       WHERE `id` = ?
+      //       ",$p,false);
+      //    return ["result"=>"success"];
 
       // DELETE LOCATION
 

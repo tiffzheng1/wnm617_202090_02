@@ -107,7 +107,7 @@ const UnyunProfilePage = async() => {
    }).then(d=>{
       console.log(d)
 
-      $("#unyun-profile-page .unyun-top")
+      $("#unyun-profile-page .unyun-profile")
          .html(makeUnyunProfile(d.result));
    });
 
@@ -115,7 +115,10 @@ const UnyunProfilePage = async() => {
       type:'locations_by_unyun_id',
       params:[sessionStorage.unyunId]
    }).then(d=>{
-      
+
+      $("#unyun-profile-page .unyun-locations")
+         .html(makeUnyunLocations(d.result));
+
       let valid_locations = d.result.reduce((r,o)=>{
          if(o.lat && o.lng) r.push(o);
          return r;
@@ -190,6 +193,32 @@ const LocationAddPage = async() => {
       makeMarkers(map_el,[posFromClick])
    })
 }
+
+
+const LocationProfilePage = async() => {
+   query({
+      type:'location_by_id',
+      params:[sessionStorage.locationId]
+   }).then(d=>{
+      console.log(d)
+
+      $("#location-profile-page .location-profile")
+         .html(makeLocationProfile(d.result));
+   })
+
+}
+
+// const LocationEditPage = async() => {
+//    query({
+//       type:'location_by_id',
+//       params:[sessionStorage.unyunId]
+//    }).then(d=>{
+//       console.log(d)
+
+//       $("#location-edit-form")
+//          .html(makeLocationEditForm(d.result[0]));
+//    });
+// }
 
 
 

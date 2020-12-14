@@ -37,27 +37,6 @@ const checkUserEditForm = () => {
 }
 
 
-// const checkUnyunAddForm = () => {
-//    let category = $("#unyun-add-category").val();
-//    let type = $("#unyun-add-type").val();
-//    let img = $("#unyun-add-image").val();
-
-//    query({
-//       type:'insert_unyun',
-//       params:[category,type,img,sessionStorage.userId]})
-//    .then(d=>{
-//       if(d.error) {
-//          throw d.error;
-//       }
-//       console.log(d.id)
-
-//       $("#unyun-add-form")[0].reset();
-
-//       sessionStorage.unyunId = d.id;
-//       $.mobile.navigate($("#unyun-add-destination").val());
-//    })
-// }
-
 const checkUnyunAddForm = () => {
    let category = $("#unyun-add-category").val();
    let type = $("#unyun-add-type").val();
@@ -119,13 +98,12 @@ const checkLocationAddForm = () => {
    let lng = $("#location-add-lng").val();
    let price = $("#location-add-price").val();
    let quantity = $("#location-add-quantity").val();
-   let unit_price = $("#location-add-unit-price").val();
    let location_name = $("#location-add-name").val();
    let description = $("#location-add-description").val();
 
    query({
       type:'insert_location',
-      params:[sessionStorage.unyunId,lat,lng,price,quantity,unit_price,location_name,description]})
+      params:[sessionStorage.unyunId,lat,lng,price,quantity,location_name,description]})
    .then(d=>{
       if(d.error) {
          throw d.error;
@@ -136,6 +114,39 @@ const checkLocationAddForm = () => {
       $("#location-add-form")[0].reset();
       $.mobile.navigate("#map-page");
    })
+}
+
+
+// const checkLocationEditForm = () => {
+//    let lat = $("#location-add-lat").val();
+//    let lng = $("#location-add-lng").val();
+//    let price = $("#location-add-price").val();
+//    let quantity = $("#location-add-quantity").val();
+//    let unit_price = $("#location-add-unit-price").val();
+//    let location_name = $("#location-add-name").val();
+//    let description = $("#location-add-description").val();
+
+//    query({
+//       type:'update_location',
+//       params:[sessionStorage.unyunId,lat,lng,price,quantity,unit_price,location_name,description]})
+//    .then(d=>{
+//       if(d.error) {
+//          throw d.error;
+//       }
+//       window.history.back();
+//    })
+// }
+
+const checkLocationDelete = id => {
+   query({
+      type:'delete_location',
+      params:[id]
+   }).then(d=>{
+      if(d.error) {
+         throw d.error;
+      }
+      $.mobile.navigate("#map-page");
+   });
 }
 
 

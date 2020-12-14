@@ -271,11 +271,14 @@
 	        </ul>
       	</header>
       	<div data-role="main" class="display-flex flex-column">
-	        	<div class="unyun-top"></div>
+	        	<div class="unyun-top">
+	        		<div class="unyun-profile"></div>
+	        		<div class="unyun-locations center"></div>
+	        	</div>
 		        <div class="unyun-bottom">
 				   <div class="map"></div>
 				   <div class="floater bottom wide form-control">
-				      <a href="#location-add-page" class="form-button button-primary">&plus; Add Location</a>
+				      <a href="#location-add-page" class="form-button button-secondary">&plus; Add Location</a>
 				   </div>
 				</div>
         </div>
@@ -332,16 +335,12 @@
 			       		</label>
 			       </div> -->
 			       <div class="form-control">
-				       <label for="location-add-price" class="form-label">Price</label>
-				       <input id="location-add-price" type="text" class="form-input" data-role="none" placeholder="$1.00">
+				       <label for="location-add-price" class="form-label">Price ($)</label>
+				       <input id="location-add-price" type="number" class="form-input" data-role="none" placeholder="1.00">
 				   </div>
 				   <div class="form-control">
 				       <label for="location-add-quantity" class="form-label">Quantity</label>
 				       <input id="location-add-quantity" type="number" class="form-input" data-role="none" placeholder="10">
-				   </div>
-				   <div class="form-control">
-				       <label for="location-add-unit-price" class="form-label">Unit Price</label>
-				       <input id="location-add-unit-price" type="text" class="form-input" data-role="none" placeholder="$0.10">
 				   </div>
 				   <div class="form-control">
 				       <label for="location-add-name" class="form-label">Location Name</label>
@@ -349,12 +348,26 @@
 				   </div>
 			       <div class="form-control">
 			        	<label for="location-add-description" class="form-label">Notes</label>
-			        	<textarea id="location-add-description" class="form-input" data-role="none" placeholder="Anything noteworthy about this Unyun at this location?"></textarea>
+			        	<textarea id="location-add-description" class="form-input" data-role="none" placeholder="Anything noteworthy to add about this Unyun at this location?"></textarea>
 			       </div>
 			    </form>
 		 	</div>
 		</div>
     </section>
+
+    <section data-role="page" id="location-profile-page">
+		<header data-role="header">
+	        <h1>Location Profile</h1>
+	        <ul>
+	            <li><a href="#" data-rel="back">Back</a></li>
+	            <li class="flex-stretch"></li>
+	            <li><a href="#" style="color:#EB4E47" data-activate="#location-delete-modal">Delete</a></li>
+	        </ul>
+      	</header>
+      	<div data-role="main" class="display-flex flex-column">
+        	<div class="location-profile"></div>
+        </div>
+	</section>
 
 	<!-- User CRUD Pages -->
 

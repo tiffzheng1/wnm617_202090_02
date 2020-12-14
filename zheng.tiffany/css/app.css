@@ -83,6 +83,10 @@ input {
    -webkit-appearance:none;
 }
 
+textarea {
+	height: 8em;
+}
+
 /*Atomic Classes*/
 
 .hidden {
@@ -374,6 +378,13 @@ a.active-tab {
 	box-shadow: 0px 3px 12px rgba(76, 107, 46, 0.2);
 }
 
+.button-secondary {
+	background-color: var(--color-secondary-medium);
+	color: var(--color-white);
+	border-radius: 6px;
+	box-shadow: 0px 3px 12px rgba(38,157,217,0.2);
+}
+
 .button-circle {
 	display: inline-block;
     line-height: 3.5rem;
@@ -617,13 +628,14 @@ a.active-tab {
 
 .unyun-profile-info {
 	padding: 1em;
+	padding-bottom: 0.75em;
     text-align: center;
 }
 
 .unyun-profile-info .unyun-type {
 	color: var(--color-neutral-dark);
 	font-size: 1.75rem;
-    line-height: 2.5rem;
+    line-height: 2.25rem;
 }
 
 .unyun-profile-info .unyun-category {
@@ -635,7 +647,7 @@ a.active-tab {
 }
 
 .unyun-profile-photo {
-    height: 20vh;
+    height: 15vh;
     margin: 1em auto;
     text-align: center;
 }
@@ -644,6 +656,11 @@ a.active-tab {
     width: auto;
     height: 100%;
     border-radius: 50%;
+}
+
+.unyun-locations-added {
+    color: var(--color-main-medium);
+    font-size: 1.25rem;
 }
 
 
@@ -818,41 +835,6 @@ a.active-tab {
 
 /* Map Page */
 
-.map-pin {
-    position: absolute;
-    width: 32px;
-}
-
-#location-1 {
-    top: 40%;
-    left: 10%;
-}
-
-#location-2 {
-    top: 80%;
-    left: 22%;
-}
-
-#location-3 {
-    top: 10%;
-    left: 18%;
-}
-
-#location-4 {
-    top: 50%;
-    left: 80%;
-}
-
-#location-5 {
-    top: 30%;
-    left: 42%;
-}
-
-#location-6 {
-    top: 60%;
-    left: 44%;
-}
-
 .map {
   position:absolute;
   top:0;
@@ -943,6 +925,12 @@ a.active-tab {
 	margin-right: 0.4em;
 }
 
+.filter.active {
+	background-color: var(--color-main-medium);
+	color: var(--color-white);
+	border-color: var(--color-main-medium-dark);
+}
+
 .filter-row {
 	display: flex;
 	overflow: auto;
@@ -1002,6 +990,36 @@ a.active-tab {
   z-index: -1;
 }
 
+
+/*Location Profile Page*/
+
+.location-price {
+    font-size: 2rem;
+    line-height: 4rem;
+    color: var(--color-main-medium);
+}
+
+.location-date-create {
+    color: var(--color-neutral-medium);
+    padding-bottom: 1rem;
+}
+
+.location-profile-table {
+    margin: 1.25em auto;
+    text-align: left;
+    line-height: 1.5rem;
+    color: var(--color-neutral-dark);
+}
+
+.table-label {
+    color: var(--color-neutral-medium);
+    width: 20%;
+    margin-right: 1em;
+}
+
+.location-name, .location-notes {
+	width: 75%;
+}
 
 
 
