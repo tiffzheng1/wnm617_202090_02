@@ -112,7 +112,7 @@ const checkLocationAddForm = () => {
       console.log(d.id)
 
       $("#location-add-form")[0].reset();
-      $.mobile.navigate("#map-page");
+      window.history.go(-2);
    })
 }
 
