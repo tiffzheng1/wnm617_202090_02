@@ -554,7 +554,7 @@ a.active-tab {
 }
 
 .user-name {
-    font-size: 1.25em;
+    font-size: 1.5em;
     color: var(--color-neutral-dark);
     padding-top: 1em;
 }
@@ -567,6 +567,7 @@ a.active-tab {
 .user-location, .user-email {
 	color: var(--color-neutral-medium);
     margin: 0.625rem 0;
+    font-size: 1.125em;
 }
 
 .profile-stats {

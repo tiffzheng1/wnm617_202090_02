@@ -191,7 +191,7 @@ function makeStatement ($data) {
             `track_users`
             (`name`,`username`,`email`,`password`,`img`,`phone`,`gender`,`date_create`)
             VALUES
-            (' ', ?, ?, md5(?), './images/icons/user-profile-empty.svg', ' ', ' ', NOW())
+            (' ', ?, ?, md5(?), 'https://via.placeholder.com/400/?text=Unyun', ' ', ' ', NOW())
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
 
@@ -282,7 +282,7 @@ function makeStatement ($data) {
             `track_locations`
             (`unyun_id`,`lat`,`lng`,`price`,`quantity`,`location_name`,`description`,`icon`,`date_create`)
             VALUES
-            (?, ?, ?, ?, ?, ?, ?, ?, './images/icons/map-pin-green.svg', NOW())
+            (?, ?, ?, ?, ?, ?, ?, './images/icons/map-pin-green.svg', NOW())
             ",$p,false);
          return ["id"=>$c->lastInsertId()];
 

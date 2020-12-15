@@ -26,6 +26,7 @@ $(()=>{
 			case 'unyun-edit-page': UnyunEditPage(); break;
 
 			case 'location-add-page': LocationAddPage(); break;
+			// case 'location-description-page': LocationDescriptionPage(); break;
 			case 'location-profile-page': LocationProfilePage(); break;
 
 		}

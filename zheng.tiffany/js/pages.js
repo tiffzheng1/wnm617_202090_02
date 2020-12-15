@@ -144,14 +144,14 @@ const UnyunProfilePage = async() => {
 }
 
 
-const UnyunAddPage = async() => {
-   query({
-      type:'user_by_id',
-      params:[sessionStorage.userId]
-   }).then(d=>{
-      console.log(d)
-   });
-}
+// const UnyunAddPage = async() => {
+//    query({
+//       type:'user_by_id',
+//       params:[sessionStorage.userId]
+//    }).then(d=>{
+//       console.log(d)
+//    });
+// }
 
 const UnyunEditPage = async() => {
    query({
@@ -193,6 +193,15 @@ const LocationAddPage = async() => {
       makeMarkers(map_el,[posFromClick])
    })
 }
+
+// const LocationDescriptionPage = async() => {
+//    query({
+//       type:'unyun_by_id',
+//       params:[sessionStorage.unyunId]
+//    }).then(d=>{
+//       console.log(d)
+//    });
+// }
 
 
 const LocationProfilePage = async() => {
